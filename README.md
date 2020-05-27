@@ -53,7 +53,7 @@ Gopherlabs is an independent community project founded by [Sangam Biradar](https
 # Core Contributors
 
 - [Sangam Biradar](https://github.com/sangam14)
-- [Saiyam Patahk](https://github.com/saiyam1814)
+
 
 
 
