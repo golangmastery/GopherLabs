@@ -1,0 +1,24 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+ 
+version: '3'
+ 
+# Define services
+services:
+  service1:
+    # App Service
+      build:
+        context: . # Use an image built from the specified dockerfile in the current directory.
+        dockerfile: Dockerfile
+      ports:
+        - "8083:8083"
+      image: localhost:8080/servers #####change here
+      restart: unless-stopped
+  service2:
+     # App Service
+      build:
+        context: ./net2/ # Use an image built from the specified dockerfile in the current directory.
+        dockerfile: Dockerfile
+      ports:
+        - "8082:8082"
+      image: localhost:8082/servers #####change here
+      restart: unless-stopped

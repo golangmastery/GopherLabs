@@ -1,0 +1,86 @@
+
+
+#  Bool Type  
+
+It's always good to take a look at the language specification and to become familiar and acquainted with the terminology used to talk about a programming language. That way we can be accurate and precise in understanding the language and in representing it and communicating it to others, so it's very important to understand what the people who designed the language were intending. We will have a closer look at the [Go Programming Language Specification](https://golang.org/ref/spec) later on.  
+  
+In this section, we're going to take a look at different types in Go. Let's start[Boolean Types](https://golang.org/ref/spec#Boolean_types)  
+  
+A _boolean type_ represents the set of Boolean truth values denoted by the predeclared constants `true` and `false`. The predeclared boolean type is `bool`.  
+  
+A Boolean is a type that can be either `true` or `false`. If we [look up Boolean](https://www.google.ca/search?q=define%3A+boolean&rlz=1C5CHFA_enCA702CA702&oq=define%3A+boolean&aqs=chrome..69i57j69i58.3231j0j7&sourceid=chrome&ie=UTF-8), it is defined as "denoting a system of algebraic notation used to represent logical propositions, especially in computing and electronics," or "a binary variable, having two possible values called “true” and “false.”  
+  
+So a Boolean is just that; `true` or `false`. It plays an important role in programming. Booleans allow us to have an expression evaluate down to a Boolean condition (`true` or `false`). And then make a decision based on that condition. So, if something is `true` we can do one thing, and if it's false, we can do something else.  
+  
+Later in this course, we will learn about conditional logic, switch statements, if statements, control flow, and how there is sequential control flow, and iterative control flow where you loop over something.  
+  
+For now though, let's see this `Boolean` value in action.  
+
+In Go, `bool` is a type, so let's declare a variable `x` of type `bool`
+  
+```go
+var x bool
+```
+`var` `x` is of _type_ `bool`. `x` _holds values_ of _type_ `bool`. We have declared the variable `x`, but have not assigned a value. That means if we print `x`, it will return its _Zero Value_. The Zero Value of a variable that is of type `bool` is `false`  
+```go
+package main
+
+import (
+	"fmt"
+)
+
+var x bool
+
+func main() {
+	fmt.Println(x)
+}
+
+```
+[playground](https://play.golang.org/p/QuKLHA2JYG)  
+
+
+Some people find it strange that we don't add a semicolon to the end of lines in Go. The semicolons are added in behind the scenes by the compiler. So, rather than `x = true;`, you just do `x = true`. Go is all about _ease of programming_. Remember, efficient complilation, ease of programming and efficient execution.  
+  
+```go
+package main
+
+import (
+	"fmt"
+)
+
+var x bool
+
+func main() {
+	fmt.Println(x)
+	x = true
+	fmt.Println(x)
+}
+```
+
+We can also do evaluations, or compare things, and get a `bool` in return. If we look at the [operators and delimiters](https://golang.org/ref/spec#Operators_and_Delimiters), we have some operators which allow us to do comparisons such as double equality `==`, less than or equal to`<=`, greater than or equal to `>=`, or greater than `>` and less than `<`, not equal `!=`, etc.  
+  
+Let's try some out. Using the short declaration operator, let's assign values to a couple of variables `a := 7`, and `b := 42`, then see if they are equal to each other `a == b`.  
+  
+```go
+package main
+
+import (
+	"fmt"
+)
+
+var x bool
+
+func main() {
+	a := 7 // if we change this to 42, a == b will evaluate to true
+	b := 42
+	fmt.Println(a == b) // experiment with different operators: <=, >=, !=, >, <
+}
+```
+[playground](https://play.golang.org/p/XUZP_Hwm_x)  
+  
+In Go a double equals operator `==` is for equality comparison, and a single equals operator `=` is for assignment.  
+  
+The language specification for [Boolean Types](https://golang.org/ref/spec#Boolean_types) states
+
+_boolean type represents the set of Boolean truth values denoted by the predeclared constants true and false. The predeclared boolean type is bool._
+
