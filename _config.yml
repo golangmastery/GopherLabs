@@ -1,1 +1,9 @@
 remote_theme: pmarsceill/just-the-docs
+# Set a path/url to a logo that will be displayed instead of the title
+logo: "/img_Beginners/Gophernew.png"
+# Enable support for hyphenated search words:
+search_tokenizer_separator: /[\s/]+/
+# Aux links for the upper right navigation
+aux_links:
+  "ContainerLabs on GitHub":
+    - "//github.com/sangam14/GopherLabs/"
