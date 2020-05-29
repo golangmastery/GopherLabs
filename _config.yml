@@ -5,5 +5,5 @@ logo: "/img_Beginners/Gophernew.png"
 search_tokenizer_separator: /[\s/]+/
 # Aux links for the upper right navigation
 aux_links:
-  "ContainerLabs on GitHub":
+  "GopherLabs on GitHub":
     - "//github.com/sangam14/GopherLabs/"
