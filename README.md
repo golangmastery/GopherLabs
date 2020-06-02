@@ -43,7 +43,7 @@ Yes, you read it right ! Its $0 learning platform. You don't need any infrastruc
 
 # Governance
 
-Gopherlabs is an independent community project founded by [Sangam Biradar](https://github.com/sangam14){: .btn },[Docker Community Leader](https://twitter.com/BiradarSangam) {: .btn }& Okteto Community Leader which is now being built & shaped by a growing community of contributors across the globe.
+Gopherlabs is an independent community project founded by [Sangam Biradar](https://github.com/sangam14){: .btn },[Docker Community Leader](https://twitter.com/BiradarSangam){: .btn } & Okteto Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
 # Core Contributors
 
