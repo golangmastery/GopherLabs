@@ -31,15 +31,15 @@ Yes, you read it right ! Its $0 learning platform. You don't need any infrastruc
 
 [why go ?](https://www.slideshare.net/sangambiradar370/welcome-to-gopherlabs-why-go-golang){: .btn }
 
-[Golang for Beginners](./Beginners/readme.md) {: .btn }
+[Golang for Beginners](https://gopherlabs.kubedaily.com/Beginners/readme.html){: .btn }
 
-[Data Structures and Algorithms](./Data_Structures_Go/README.md) {: .btn }
+[Data Structures and Algorithms](https://gopherlabs.kubedaily.com/Data_Structures_Go/){: .btn }
 
-[Golang for Intermediate](./Intermediate/readme.md)  {: .btn }
+[Golang for Intermediate](https://gopherlabs.kubedaily.com/Intermediate/){: .btn }
 
-[Golang Cheatsheet](./Golang_Cheatsheet.md)  {: .btn }
+[Golang Cheatsheet](https://gopherlabs.kubedaily.com/Golang_Cheatsheet.html){: .btn }
 
-[Experts Talks - Built with Go](./BuiltwithGo/redme.md) {: .btn }
+[Experts Talks - Built with Go](https://gopherlabs.kubedaily.com/BuiltwithGo/redme.html){: .btn }
 
 # Governance
 
