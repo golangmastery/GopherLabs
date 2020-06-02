@@ -12,15 +12,14 @@ permalink: /
 
 
 Gopher Labs brings you tutorials that help you get hands-on experience using Golang. Here you will find complete documentation of labs and tutorials that will help you, no matter if you are a beginner, SysAdmin, IT Pro or Developer.
-Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with GO Platform](
-https://play.golang.org). This is a free browser based learning platform for you. Hence, we have everything ready for you to get started with.
+Yes, you read it right ! Its $0 learning platform. You don't need any infrastructure. Most of the tutorials runs on [Play with GO Platform](https://play.golang.org){: .btn }. This is a free browser based learning platform for you. Hence, we have everything ready for you to get started with.
 
 
 #  Getting Started in 3 Simple Steps
 
-- Join GopherLabs Contributors in 2 mins via [GopherLabs Discord Server](https://discord.gg/S3GtFvT)
+- Join GopherLabs Contributors in 2 mins via [GopherLabs Discord Server](https://discord.gg/S3GtFvT){: .btn }
 
-- Fork, Contribute & Share via [GopherLabs GITHUB Repository](https://github.com/collabnix/gopherlabs)
+- Fork, Contribute & Share via [GopherLabs GITHUB Repository](https://github.com/collabnix/gopherlabs){: .btn }
 
 -  [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40BiradarSangam)](https://twitter.com/BiradarSangam)
 
@@ -30,36 +29,25 @@ https://play.golang.org). This is a free browser based learning platform for you
 
 # Gopher Labs
 
-[why go ?](https://www.slideshare.net/sangambiradar370/welcome-to-gopherlabs-why-go-golang)
+[why go ?](https://www.slideshare.net/sangambiradar370/welcome-to-gopherlabs-why-go-golang){: .btn }
 
-[Golang for Beginners](./Beginners/readme.md) 
+[Golang for Beginners](./Beginners/readme.md) {: .btn }
 
-[Data Structures and Algorithms](./Data_Structures_Go/README.md) 
+[Data Structures and Algorithms](./Data_Structures_Go/README.md) {: .btn }
 
-[Golang for Intermediate](./Intermediate/readme.md)  
+[Golang for Intermediate](./Intermediate/readme.md)  {: .btn }
 
-[Golang for Advanced] 
+[Golang Cheatsheet](./Golang_Cheatsheet.md)  {: .btn }
 
-[Protocol Buffers] 
-
-[microservice golang] 
-
-[gRPC for Golang]
-
-[Go Programming for Hackers and Pentesters]
-
-[Golang Cheatsheet](./Golang_Cheatsheet.md)  
-
-[Experts Talks - Built with Go](./BuiltwithGo/redme.md) 
-
+[Experts Talks - Built with Go](./BuiltwithGo/redme.md) {: .btn }
 
 # Governance
 
-Gopherlabs is an independent community project founded by [Sangam Biradar](https://github.com/sangam14),[Docker Community Leader](https://twitter.com/BiradarSangam) & Okteto Community Leader which is now being built & shaped by a growing community of contributors across the globe.
+Gopherlabs is an independent community project founded by [Sangam Biradar](https://github.com/sangam14){: .btn },[Docker Community Leader](https://twitter.com/BiradarSangam) {: .btn }& Okteto Community Leader which is now being built & shaped by a growing community of contributors across the globe.
 
 # Core Contributors
 
-- [Sangam Biradar](https://github.com/sangam14)
+- [Sangam Biradar](https://github.com/sangam14){: .btn }
 
 
 
