@@ -1,3 +1,9 @@
+---
+layout: default
+title: Numeral systems -  binary
+parent: Golang for Beginners
+nav_order: 3
+---
 
 # Numeral systems -  binary
 
