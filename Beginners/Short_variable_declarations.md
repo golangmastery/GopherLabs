@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Short variable declarations
+parent: Golang for Beginners
+nav_order: 7
+---
 
 # Short variable declarations
 
