@@ -1,4 +1,8 @@
-
+---
+layout: default
+title: Numeral systems -  hexadecimal
+parent: Golang for Beginners
+nav_order: 4
 ---
 
 # Numeral systems -  hexadecimal
