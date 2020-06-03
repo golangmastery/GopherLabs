@@ -1,6 +1,6 @@
 ---
 layout: default
-title: UTF 8 = Unicode Transformation Format – 8-bit
+title: Numeral Systems - UTF-8
 parent: Golang for Beginners
 nav_order: 6
 ---
