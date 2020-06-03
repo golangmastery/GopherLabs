@@ -1,3 +1,11 @@
+---
+layout: default
+title: Numeral Systems - Decimal 
+parent: Golang for Beginners
+nav_order: 2
+---
+
+
 # Numeral Systems - Decimal 
 
 	
