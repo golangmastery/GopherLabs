@@ -2,6 +2,8 @@
 layout: default
 title: Golang for Beginners
 nav_order: 2
+has_children: true
+permalink: 
 ---
 
 
