@@ -1,9 +1,8 @@
 ---
 layout: default
-title: First Hello world Program 
+title: Lets Start With First Hello world Program 
+parent: Golang for Beginners
 nav_order: 1
-has_children: true
-permalink: 
 ---
 
 
