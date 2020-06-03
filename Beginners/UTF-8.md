@@ -1,4 +1,12 @@
 ---
+layout: default
+title: UTF 8 = Unicode Transformation Format – 8-bit
+parent: Golang for Beginners
+nav_order: 6
+---
+
+
+---
 ##  UTF 8 = Unicode Transformation Format – 8-bit
 
 UTF8 is a character encoding where is assigns 1,112,064 characters a binary number that is from 1 byte (8 bits) to 4 bytes (32 bits) long.
