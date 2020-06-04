@@ -1,3 +1,9 @@
+---
+layout: default
+title: String Type  
+parent: Golang for Beginners
+nav_order: 22
+---
 
 #  String Type  
   
