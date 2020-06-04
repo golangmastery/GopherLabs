@@ -1,4 +1,9 @@
-
+---
+layout: default
+title:  Conversion between array and slice
+parent: Golang for Beginners
+nav_order: 33
+---
 
 # Conversion between array and slice
 ----
