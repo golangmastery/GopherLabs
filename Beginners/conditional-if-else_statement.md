@@ -1,3 +1,9 @@
+---
+layout: default
+title: Conditional - If, Else if, Else
+parent: Golang for Beginners
+nav_order: 17
+---
 
 # Conditional - If, Else if, Else
 
