@@ -1,3 +1,9 @@
+---
+layout: default
+title:  Methods
+parent: Golang for Beginners
+nav_order: 34
+---
 
 ## What is Methods?
 
