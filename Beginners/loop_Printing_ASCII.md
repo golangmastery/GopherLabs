@@ -1,3 +1,9 @@
+---
+layout: default
+title: Loop - Printing ASCII
+parent: Golang for Beginners
+nav_order: 15
+---
 
 #  Loop - Printing ASCII
 
