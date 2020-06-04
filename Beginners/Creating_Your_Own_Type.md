@@ -1,3 +1,9 @@
+---
+layout: default
+title:  Creating Your Own Type
+parent: Golang for Beginners
+nav_order: 28
+---
 
 #  Creating Your Own Type
 
