@@ -1,4 +1,12 @@
 ---
+layout: default
+title: variable with zero value 
+parent: Golang for Beginners
+nav_order: 7
+---
+
+
+---
 
 # variable with zero value 
 
