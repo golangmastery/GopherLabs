@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Conditional Logic Operators
+parent: Golang for Beginners
+nav_order: 21
+---
 
 #  Conditional Logic Operators
 
