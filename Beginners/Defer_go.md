@@ -1,3 +1,10 @@
+---
+layout: default
+title:  Defer 
+parent: Golang for Beginners
+nav_order: 29
+---
+
 # Defer 
 
 A defer statement defers the execution of a function until the surrounding function returns.
