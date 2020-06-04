@@ -1,3 +1,9 @@
+---
+layout: default
+title:  Stacking defers
+parent: Golang for Beginners
+nav_order: 30
+---
 
 # Stacking defers
 Deferred function calls are pushed onto a stack. When a function returns, 
