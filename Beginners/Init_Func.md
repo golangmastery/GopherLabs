@@ -1,3 +1,9 @@
+---
+layout: default
+title:  init Function
+parent: Golang for Beginners
+nav_order: 36
+---
 
 # init Function
 
