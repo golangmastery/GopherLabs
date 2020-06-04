@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Structs
+parent: Golang for Beginners
+nav_order: 24
+---
 
 # Structs
 A struct is a collection of fields.
