@@ -1,3 +1,10 @@
+---
+layout: default
+title:  Generate Random number with math/crypto/rand in Go
+parent: Golang for Beginners
+nav_order: 14
+---
+
 
 # Generate Random number with math/crypto/rand in Go - Programming in GO
 
