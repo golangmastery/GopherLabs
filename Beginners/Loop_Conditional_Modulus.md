@@ -1,3 +1,10 @@
+---
+layout: default
+title: Loop, Conditional, Modulus
+parent: Golang for Beginners
+nav_order: 18
+---
+
 
 #  Loop, Conditional, Modulus
 
