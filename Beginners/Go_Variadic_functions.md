@@ -1,3 +1,9 @@
+---
+layout: default
+title:  variadic function
+parent: Golang for Beginners
+nav_order: 35
+---
 
 # What is variadic function?
 
