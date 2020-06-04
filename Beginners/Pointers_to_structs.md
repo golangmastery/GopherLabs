@@ -1,3 +1,9 @@
+---
+layout: default
+title: Struct fields can be accessed through a struct pointer.
+parent: Golang for Beginners
+nav_order: 26
+---
 
 
 # Struct fields can be accessed through a struct pointer.
