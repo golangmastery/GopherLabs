@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Loop - For Statement
+parent: Golang for Beginners
+nav_order: 12
+---
 
 #  Loop - For Statement
 
