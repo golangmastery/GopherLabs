@@ -1,3 +1,9 @@
+---
+layout: default
+title: struct literal
+parent: Golang for Beginners
+nav_order: 25
+---
 
 # struct literal
 
