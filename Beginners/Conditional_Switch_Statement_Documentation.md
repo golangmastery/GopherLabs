@@ -1,3 +1,9 @@
+---
+layout: default
+title:  Conditional - Switch Statement Documentation
+parent: Golang for Beginners
+nav_order: 20
+---
 
 
 #  Conditional - Switch Statement Documentation
