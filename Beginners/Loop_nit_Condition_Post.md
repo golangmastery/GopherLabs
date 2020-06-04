@@ -1,3 +1,10 @@
+---
+layout: default
+title: Loop - Init, Condition, Post
+parent: Golang for Beginners
+nav_order: 10
+---
+
 #  Loop - Init, Condition, Post
 
 As you're learning Go, a good quick reference is [Go by Example](https://gobyexample.com/).  
