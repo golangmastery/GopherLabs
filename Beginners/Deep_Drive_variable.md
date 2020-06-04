@@ -1,3 +1,9 @@
+---
+layout: default
+title: deep drive on variables 
+parent: Golang for Beginners
+nav_order: 8
+---
 
 
 # deep drive on variables 
