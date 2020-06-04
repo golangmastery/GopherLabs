@@ -1,3 +1,9 @@
+---
+layout: default
+title:  Pointers
+parent: Golang for Beginners
+nav_order: 31
+---
 
 # Pointers
 Go has pointers. A pointer holds the memory address of a value.
