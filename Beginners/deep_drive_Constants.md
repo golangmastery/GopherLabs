@@ -1,5 +1,11 @@
+---
+layout: default
+title: deep drive on Constants
+parent: Golang for Beginners
+nav_order: 9
+---
 
-# 9. deep drive on Constants  - programming in go
+# 9. deep drive on Constants 
 
 If you wanted to find out whether `const` was a keyword, how would you do so?
 
