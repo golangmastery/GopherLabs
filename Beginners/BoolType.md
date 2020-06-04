@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Bool Type  
+parent: Golang for Beginners
+nav_order: 23
+---
 
 #  Bool Type  
 
