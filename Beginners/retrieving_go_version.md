@@ -1,4 +1,9 @@
-
+---
+layout: default
+title:  Retrieving the Golang version
+parent: Golang for Beginners
+nav_order: 39
+---
 # Retrieving the Golang version
 
 While building a program, it is a good practice to log the environment settings, build version, and runtime version,
