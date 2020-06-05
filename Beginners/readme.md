@@ -7,58 +7,16 @@ permalink:
 ---
 
 
-# Golang for Beginners - Go 101 
-
-Welcome To Go 101 , we will take some hand-on session to understand basic fundamentats of go programming language . no matter your new to programming language we are covering 101 track which cover all your concept to strat track 102 . 
-so lets start : 
+# Golang for Beginners - slides
  
-- [Getting Start with Golang - slides](https://collabnix.github.io/gopherlabs/Beginners/slides/Getting_Start_with_golang/go101.html)
-- [Hello World - slides](https://collabnix.github.io/gopherlabs//Beginners/slides/HelloWorld/HelloWorld_101.html)
-- [Lets Start With First Hello World](./hello-world.md)
-- [Number System Hands On Lab - slides](https://collabnix.github.io/gopherlabs//Beginners/slides/Number_System.html/Number_System101.html)
-- [Numeral Systems - Decimal](./Decimal.md)
-- [Numeral Systems - Binary](./binary_go.md)
-- [Numeral Systems - Hexadecimal](./Hexadecimal.md)
-- [Numeral Systems - loop](./Numeral-systems-using-loop.md)
-- [Numeral Systems - UTF-8](./UTF-8.md)
-- [Deep Drive Into Variables,Constants and Scope - slides](https://collabnix.github.io/gopherlabs/Beginners/slides/Variable_Constants_Scope/variable_Constant_Scope.html)
-- [Short Variable Declarations](./Short_variable_declarations.md)
-- [Variable With Zero Value](./variable_with_zero_value.md)
-- [Deep Drive On Variables](./Deep_Drive_variable.md)
-- [Deep Drive On Constants](./deep_drive_Constants.md)
-- [Decision Making in Golang - slides](https://collabnix.github.io/gopherlabs/Beginners/slides/Decision_Making/)
-- [Loop - Init, Condition, Post](./Loop_nit_Condition_Post.md)
-- [Loop - Nested Loops](./NestedLoop.md)
-- [Loop - For Statement](./loop_for_statement.md) 
-- [Loop - Break & Continue](./Loop_Break_Continue.md)
-- [Generate Random Number With Math/Crypto/Rand](./random_number_crypto.md)
-- [Loop - Printing ASCII](./loop_Printing_ASCII.md)
-- [Conditional - If Statement](./Conditional_If_Statement.md)
-- [Conditional - If, Else If, Else](./conditional-if-else_statement.md) 
-- [Loop, Conditional, Modulus](./Loop_Conditional_Modulus.md)
-- [Conditional - Switch Statement](./Conditional_Switch_Statement.md)
-- [Conditional Switch Statement Documentation](./Conditional_Switch_Statement_Documentation.md)
-- [Conditional Logic Operators](./Conditional_Logic_Operators.md)
-- [Types - slice, map, new, make, struct - slides ](https://collabnix.github.io/gopherlabs/Beginners/slides/Types/types.html)
-- [String Type](./String_Type.md)
-- [Bool Type](./BoolType.md)
-- [Struct](./Structs.md)
-- [Struct Fields](./Struct_Fields.md)
-- [Struct Literal](./struct_literal.md)
-- [Pointers To Structs](./Pointers_to_structs.md)
-- [Conversion, Not Casting](./Conversion_Not_Casting.md) 
-- [Creating Your Own Type](./Creating_Your_Own_Type.md)
-- [funcs, func expressions, closure, returning funcs, recursion, the stack slides](https://collabnix.github.io/gopherlabs/Beginners/slides/func/func.html)
-- [Defers](./Defer_go.md)
-- [Stacking Defers](./stacking_defers.md)
-- [Pointer](./pointer_golang.md)
-- [Prefix Suffix](./Prefix_Suffix.md)
-- [Conversion Between Array And Slice](./Conversion_between_array_and_slice.md)
-- [Methods](./what_is_methods.md) 
-- [Variadic Functions](./Go_Variadic_functions.md)
-- [Init Function](./Init_Func.md)
-- [Interface](./interface_Go.md)
-- [Command Line Arguments and File I/O](./CLI_File_Arg.md)
+- [Getting Start with Golang - slides](https://gopherlabs.kubedaily.com/Beginners/slides/Getting_Start_with_golang/go101.html)
+- [Hello World - slides](https://gopherlabs.kubedaily.com/Beginners/slides/HelloWorld/HelloWorld_101.html)
+- [Number System Hands On Lab - slides](https://gopherlabs.kubedaily.com/Beginners/slides/Number_System.html/Number_System101.html)
+- [Deep Drive Into Variables,Constants and Scope - slides](https://gopherlabs.kubedaily.com/gopherlabs/Beginners/slides/Variable_Constants_Scope/variable_Constant_Scope.html)
+- [Decision Making in Golang - slides](https://gopherlabs.kubedaily.com/Beginners/slides/Decision_Making/)
+- [Types - slice, map, new, make, struct - slides ](https://gopherlabs.kubedaily.com/Beginners/slides/Types/types.html)
+- [funcs, func expressions, closure, returning funcs, recursion, the stack slides](https://gopherlabs.kubedaily.com/Beginners/slides/func/func.html)
+
 
 # Golang for Beginners - Go 102  
 
