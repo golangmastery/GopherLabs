@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Command Line Arguments and File I/O
+title:  interface
 parent: Golang for Beginners
 nav_order: 38
 ---
