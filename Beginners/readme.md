@@ -102,7 +102,8 @@ This Go 106 track we will play around filesystem
 - [Filtering file listings](./Filtering_file_listings.md)
 - [Comparing two files](./Comparing_two_files.md)
 - [Resolving the user home directory](./Resolving_the_user_home_directory.md)
-
+# Golang 102
+{: .no_toc }
 
  [ Golang for Intermediate >>>> ](https://collabnix.github.io/gopherlabs/Intermediate/)
 
