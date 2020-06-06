@@ -1,3 +1,10 @@
+---
+layout: default
+title: Breaking the string into words
+parent: Golang for Beginners - Standard Library
+nav_order: 13
+---
+
 ## Breaking the string into words
 
 - Breaking the string into words could be tricky. First, decide what the word is, as well as what the separator is, and if there is any whitespace or any other characters.  After these decisions have been made, you can choose the appropriate function from the strings package. This recipe will describe common cases.
