@@ -1,3 +1,10 @@
+---
+layout: default
+title: Reading and writing binary data
+parent: Golang for Beginners - Standard Library
+nav_order: 41
+---
+
 # Reading and writing binary data
 
 - describes how to write and read any type in the binary form.
