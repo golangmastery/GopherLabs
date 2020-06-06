@@ -1,3 +1,10 @@
+---
+layout: default
+title: Joining the string slice with a separator
+parent: Golang for Beginners - Standard Library
+nav_order: 14
+---
+
 ## Joining the string slice with a separator
 
 - The recipe, Breaking the string into words, led us through the task of splitting the single string into substrings, according to defined rules. This recipe, on the other hand, describes how to concatenate the multiple strings into a single string with a given string as the separator.
