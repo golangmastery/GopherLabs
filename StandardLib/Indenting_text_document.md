@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Indenting a text document
+parent: Golang for Beginners - Standard Library
+nav_order: 22
+---
 ## Indenting a text document
 
 - The previous recipe depicts how to do string padding and whitespace trimming. This one will guide you through the indentation and unindentation of a text document. Similar principles from the previous recipes will be used.
