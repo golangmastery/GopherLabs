@@ -1,3 +1,10 @@
+---
+layout: default
+title:Handling operating system signals
+parent: Golang for Beginners - Standard Library
+nav_order: 6
+---
+
 ## Handling operating system signals
 
 - Signals are the elementary way the operating systems communicate with the running process. Two of the most usual signals are called SIGINT and SIGTERM.These cause the program to terminate.
