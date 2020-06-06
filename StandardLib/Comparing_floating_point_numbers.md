@@ -1,3 +1,10 @@
+---
+layout: default
+title: Comparing floating-point numbers
+parent: Golang for Beginners - Standard Library
+nav_order: 24
+---
+
 ## Comparing floating-point numbers
 
 - Because of how floating-point numbers are represented, there can be inconsistencies while comparing two numbers that appear to be identical. Unlike integers, IEEE floating-point numbers are only approximated. The need to convert the numbers to a form the computer can store in binary leads to minor precision or round-off deviations. For example, a value of 1.3 could be represented as 1.29999999999. 
