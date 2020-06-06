@@ -1,3 +1,10 @@
+---
+layout: default
+title: Rounding floating-point numbers
+parent: Golang for Beginners - Standard Library
+nav_order: 25
+---
+
 ## Rounding floating-point numbers
 
 - The rounding of a floating-point number to an integer or to a particular precision has to be done properly. The most common error is to cast the floating-point type float64 to an integer type and consider it as well-handled.
