@@ -1,3 +1,10 @@
+---
+layout: default
+title: Parsing a large XML file effectively
+parent: Golang for Beginners - Standard Library
+nav_order: 46
+---
+
 # Parsing a large XML file effectively
 
 - XML is a very common format for data exchange. The Go library contains support for parsing XML files the same way as the JSON. Usually,
