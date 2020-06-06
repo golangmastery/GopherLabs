@@ -1,3 +1,11 @@
+---
+layout: default
+title: Reading standard input
+parent: Golang for Beginners - Standard Library
+nav_order: 35
+---
+
+
 # Reading standard input
 
 Every process owns its standard input, output, and error file descriptor.
