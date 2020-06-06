@@ -1,3 +1,10 @@
+---
+layout: default
+title: Replacing part of the string
+parent: Golang for Beginners - Standard Library
+nav_order: 17
+---
+
 ## Replacing part of the string
 
 - Another very common task related to string processing is the replacement of the substring in a string. Go standard library provide the Replace function and Replacer type for the replacement of multiple strings at once.
