@@ -1,3 +1,10 @@
+---
+layout: default
+title: Formatting with the correct plurals
+parent: Golang for Beginners - Standard Library
+nav_order: 29
+---
+
 ## Formatting with the correct plurals
 
 - When displaying messages for the user, the interaction is more pleasant if the sentences feel more human. 
