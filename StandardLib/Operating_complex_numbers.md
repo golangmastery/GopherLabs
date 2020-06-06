@@ -1,3 +1,10 @@
+---
+layout: default
+title: Operating complex numbers
+parent: Golang for Beginners - Standard Library
+nav_order: 31
+---
+
 ## Operating complex numbers
 
 - Complex numbers are usually used for scientific applications and calculations. Go implements complex numbers as the primitive type. 
