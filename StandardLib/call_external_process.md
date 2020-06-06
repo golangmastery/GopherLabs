@@ -1,3 +1,11 @@
+---
+layout: default
+title: Calling an external proces
+parent: Golang for Beginners - Standard Library
+nav_order: 7
+---
+
+
 ## Calling an external proces
 
 - The Go binary could also be used as a tool for various utilities and with use of go run as a replacement for the bash script. For these purposes, it is usual that the command-line utilities are called.
