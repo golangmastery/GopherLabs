@@ -1,3 +1,10 @@
+---
+layout: default
+title: Finding the substring in a string
+parent: Golang for Beginners - Standard Library
+nav_order: 12
+---
+
 ## Finding the substring in a string
 
 - Finding the substring in a string is one of the most common tasks for developers. Most of the mainstream languages implement this in a standard library. Go is not an exception. This recipe describes the way Go implements this.
