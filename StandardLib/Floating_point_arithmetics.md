@@ -1,3 +1,10 @@
+---
+layout: default
+title: Floating-point arithmetics
+parent: Golang for Beginners - Standard Library
+nav_order: 26
+---
+
 ## Floating-point arithmetics
 
 - As described in previous recipes, the representation of the floating-point numbers also complicates the arithmetic. For general purposes, the operations on the built-in float64 are sufficient. In case more precision is needed, the math/big package comes into play. This recipe will show you how to handle this.
