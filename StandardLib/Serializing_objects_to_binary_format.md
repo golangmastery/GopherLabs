@@ -1,3 +1,10 @@
+---
+layout: default
+title: Serializing objects to binary format
+parent: Golang for Beginners - Standard Library
+nav_order: 44
+---
+
 # Serializing objects to binary format
 
 - Besides the well-known JSON and XML, Go also offers the binary format, gob. 
