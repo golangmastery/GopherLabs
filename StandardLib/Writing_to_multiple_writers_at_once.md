@@ -2,7 +2,7 @@
 layout: default
 title: Writing to multiple writers at once
 parent: Golang for Beginners - Standard Library
-nav_order: 51
+nav_order: 42
 ---
 
 ## Writing to multiple writers at once
