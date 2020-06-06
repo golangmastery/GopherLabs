@@ -1,3 +1,10 @@
+---
+layout: default
+title: Finding the substring in text by the regex pattern
+parent: Golang for Beginners - Standard Library
+nav_order: 18
+---
+
 ## Finding the substring in text by the regex pattern
 
 - There are always tasks such as validating the input, searching the document for any information, or even cleaning up a given string from unwanted escape characters. For these cases, regular expressions are usually used.
