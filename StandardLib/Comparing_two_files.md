@@ -136,7 +136,7 @@ sangam:golang-daily sangam$
 - The comparison of the two files can be done in a few ways. This recipe describes the two basic ones.
 The first one is by doing a comparison of the whole file by creating the checksum of the file.
 
-- The Generating checksum recipe of (https://collabnix.github.io/gopherlabs/Beginners/Generating_checksums.html) Dealing with Numbers shows how you can create the checksum of the file. This way, the getMD5SumString function generates the checksum string, which is a hexadecimal representation of the byte result of MD5. The strings are then compared.
+- The Generating checksum recipe of (https://gopherlabs.kubedaily.com/Beginners/Generating_checksums.html) Dealing with Numbers shows how you can create the checksum of the file. This way, the getMD5SumString function generates the checksum string, which is a hexadecimal representation of the byte result of MD5. The strings are then compared.
 
 - The second approach compares the files line by line (in this case, the string content). 
 - In case the lines are not matching, the x sign is included. This is the same way you can compare the binary content,
