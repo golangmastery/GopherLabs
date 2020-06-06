@@ -1,3 +1,10 @@
+---
+layout: default
+title: Creating files and directories
+parent: Golang for Beginners - Standard Library
+nav_order: 54
+---
+
 # Creating files and directories
 
 - few general ways you can create files and directories in code.
