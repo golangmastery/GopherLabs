@@ -1,3 +1,10 @@
+---
+layout: default
+title: Extracting data from an incomplete JSON array
+parent: Golang for Beginners - Standard Library
+nav_order: 47
+---
+
 # Extracting data from an incomplete JSON array
 
 - This recipe contains a very specific use case, where your program consumes the JSON from an unreliable source and the JSON contains an array of objects which has the beginning token 
