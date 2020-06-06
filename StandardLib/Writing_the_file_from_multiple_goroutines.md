@@ -1,3 +1,11 @@
+---
+layout: default
+title: Writing the file from multiple goroutines
+parent: Golang for Beginners - Standard Library
+nav_order: 51
+---
+
+
 ## Writing the file from multiple goroutines
 
  - how to safely write to the file from multiple goroutines.
