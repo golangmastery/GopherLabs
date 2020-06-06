@@ -1,3 +1,10 @@
+---
+layout: default
+title: Getting the current process PID 
+parent: Golang for Beginners - Standard Library
+nav_order: 5
+---
+
 ## Getting the current process PID 
 
 Getting to know the PID of the running process is useful. The PID could be used by OS utilities to find out the information about the process itself. It is also valuable to know the PID in case of process failure, so you can trace the process behavior across the system in system logs, such as /var/log/messages, /var/log/syslog.
