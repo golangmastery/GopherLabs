@@ -1,3 +1,10 @@
+---
+layout: default
+title: Formatting numbers
+parent: Golang for Beginners - Standard Library
+nav_order: 27
+---
+
 ## Formatting numbers
 
 - If the numbers are converted to the string, they usually need to be reasonably formatted. The formatting of a number means the number is printed with a given number, made up of digits and decimals. The representation of a value can also be chosen. A closely related problem with this, however, is the localization of number formatting. For example, some languages use comma-separated zeros.
