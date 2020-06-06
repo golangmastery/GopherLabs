@@ -1,3 +1,12 @@
+---
+layout: default
+title: Golang for Beginners - Standard Library 
+nav_order: 3
+has_children: true
+has_toc: true
+permalink: 
+---
+
 # Golang for Beginners - Go 102  
 
 Every program, once it is executed, exists in the environment of the operating system. The program receives input and provides output to this environment. The operating system also needs to communicate with the program to let it know what's happening outside. And finally, the program needs to respond with appropriate actions. 
