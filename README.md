@@ -5,10 +5,9 @@ nav_order: 1
 description: " An Ultimate GopherLabs Hands-on Labs  "
 permalink: /
 ---
-[Join GopherLabs Community](https://discord.gg/S3GtFvT){: .btn }
+[Join GopherLabs Community](https://discord.gg/S3GtFvT){: .btn .btn-green .mr-4 }
 
 ![img](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/gopherlabskube.png)
-[GopherLabs ](https://discord.gg/S3GtFvT){: .btn .btn-green .mr-4 }
 
 The Ultimate Workshop Track Specially Designed For You - Select Learning Paths 
 {: .label .label-blue }
