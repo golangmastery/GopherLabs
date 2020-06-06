@@ -1,3 +1,11 @@
+---
+layout: default
+title: Reading the file into a string
+parent: Golang for Beginners - Standard Library
+nav_order: 38
+---
+
+
 # Reading the file into a string
 
 - In the previous recipes, we saw the reading from Stdin and the opening of the file.
