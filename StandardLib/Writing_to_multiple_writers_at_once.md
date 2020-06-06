@@ -1,3 +1,10 @@
+---
+layout: default
+title: Writing to multiple writers at once
+parent: Golang for Beginners - Standard Library
+nav_order: 51
+---
+
 ## Writing to multiple writers at once
 
 - When you need to write the same output into more than one target, there is a helping hand available in the built-in package. 
