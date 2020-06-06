@@ -1,3 +1,9 @@
+---
+layout: default
+title: Managing whitespace in a string
+parent: Golang for Beginners - Standard Library
+nav_order: 21
+---
 ## Managing whitespace in a string
 
 - The string input could contain too much whitespace, too little whitespace, or unsuitable whitespace chars. This recipe includes tips on how to manage these and format the string to your needs. 
