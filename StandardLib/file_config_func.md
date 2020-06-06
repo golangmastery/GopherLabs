@@ -1,3 +1,10 @@
+---
+layout: default
+title: File configuration with functional options
+parent: Golang for Beginners - Standard Library
+nav_order: 11
+---
+
 ## File configuration with functional options
 
 
