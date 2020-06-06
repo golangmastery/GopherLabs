@@ -1,3 +1,11 @@
+---
+layout: default
+title: Writing standard output and error
+parent: Golang for Beginners - Standard Library
+nav_order: 36
+---
+
+
 # Writing standard output and error
 
 - each process has stdin, a stdout and stderr file descriptors.
