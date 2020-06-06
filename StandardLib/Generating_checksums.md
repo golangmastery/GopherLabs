@@ -1,3 +1,10 @@
+---
+layout: default
+title: Generating checksums
+parent: Golang for Beginners - Standard Library
+nav_order: 34
+---
+
 ## Generating checksums
 
 - The hash, or so-called checksum, is the easiest way to quickly compare any content. This recipe demonstrates how to create the checksum of the file content. For demonstration purposes,
