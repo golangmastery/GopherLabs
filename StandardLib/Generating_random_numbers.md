@@ -1,3 +1,9 @@
+---
+layout: default
+title: Generating random numbers
+parent: Golang for Beginners - Standard Library
+nav_order: 30
+---
 
 ## Generating random numbers
 
