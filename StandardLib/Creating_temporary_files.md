@@ -1,3 +1,10 @@
+---
+layout: default
+title: Creating temporary files
+parent: Golang for Beginners - Standard Library
+nav_order: 49
+---
+
 # Creating temporary files
 
 - Temporary files are commonly used while running test cases or if your application needs to have a place to store short-term content such as user data uploads and currently processed data. 
