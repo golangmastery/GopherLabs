@@ -1,3 +1,10 @@
+---
+layout: default
+title: Getting file information
+parent: Golang for Beginners - Standard Library
+nav_order: 48
+---
+
 # Getting file information
 
 If you need to discover basic information about the accessed file, 
