@@ -1,3 +1,10 @@
+---
+layout: default
+title: Writing the file
+parent: Golang for Beginners - Standard Library
+nav_order: 50
+---
+
 # Writing the file
 
 - Writing a file is an essential task for every programmer; 
