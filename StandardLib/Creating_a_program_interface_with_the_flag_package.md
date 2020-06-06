@@ -1,3 +1,11 @@
+---
+layout: default
+title: Creating a program interface with the flag package
+parent: Golang for Beginners - Standard Library
+nav_order: 3
+---
+
+
 # Creating a program interface with the flag package
 
 - The previous recipe describes how to access the program arguments by a very generic approach.
