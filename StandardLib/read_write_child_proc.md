@@ -1,3 +1,10 @@
+---
+layout: default
+title: Reading/writing from the child process
+parent: Golang for Beginners - Standard Library
+nav_order: 9
+---
+
 ## Reading/writing from the child process
 
 - Every process, that is executed, has the standard output, input and error output. The Go standard library provides the way to read and write to these.
