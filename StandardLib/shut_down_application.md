@@ -1,3 +1,10 @@
+---
+layout: default
+title: Shutting down the application gracefully
+parent: Golang for Beginners - Standard Library
+nav_order: 10
+---
+
 ## Shutting down the application gracefully
 
 - Servers and daemons are the programs that run for a long time (typically days or even weeks). These long-running programs usually allocate resources (database connections, network sock) at the start and keep these resources as long as they exist. If such a process is killed and the shutdown is not handled properly, a resource leak could happen. To avoid that behavior, the so-called graceful shutdown should be implemented.
