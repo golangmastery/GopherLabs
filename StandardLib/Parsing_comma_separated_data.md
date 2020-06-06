@@ -1,3 +1,11 @@
+---
+layout: default
+title: Parsing comma-separated data
+parent: Golang for Beginners - Standard Library
+nav_order: 20
+---
+
+
 ## Parsing comma-separated data
 
 - There are multiple table data formats. CSV (comma-separated values) is one of the most basic formats largely used for data transport and export. There is no standard that defines CSV, but the format itself is described in RFC 4180.
