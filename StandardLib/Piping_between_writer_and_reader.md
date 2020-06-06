@@ -1,3 +1,10 @@
+---
+layout: default
+title: Piping between writer and reader
+parent: Golang for Beginners - Standard Library
+nav_order: 43
+---
+
 # Piping between writer and reader
 
 - The pipes between processes are the easy way to use the output of the first process as the input of other processes.
