@@ -1,3 +1,10 @@
+---
+layout: default
+title: Taking logarithms
+parent: Golang for Beginners - Standard Library
+nav_order: 33
+---
+
 ## Taking logarithms
 
 - Logarithms are used in scientific applications as well as in data visualizations and measurements. 
