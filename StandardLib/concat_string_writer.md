@@ -1,3 +1,10 @@
+---
+layout: default
+title: Concatenating a string with writer
+parent: Golang for Beginners - Standard Library
+nav_order: 15
+---
+
 ## Concatenating a string with writer
 
 - Besides the built-in + operator, there are more ways to concatenate the string.  This recipe will describe the more performant way of concatenating strings with the bytes package and the built-in copy function.
