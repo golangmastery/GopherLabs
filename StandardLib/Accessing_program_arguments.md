@@ -1,3 +1,10 @@
+---
+layout: default
+title: Accessing program arguments
+parent: Golang for Beginners - Standard Library
+nav_order: 2
+---
+
 # Accessing program arguments
 
 The most simple way to parameterize the program run is to use the command-line arguments as program parameters. 
