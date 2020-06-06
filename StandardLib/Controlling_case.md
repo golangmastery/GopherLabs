@@ -1,3 +1,9 @@
+---
+layout: default
+title: Controlling case
+parent: Golang for Beginners - Standard Library
+nav_order: 19
+---
 
 ## Controlling case
 
