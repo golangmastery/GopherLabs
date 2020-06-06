@@ -1,3 +1,10 @@
+---
+layout: default
+title: Converting between degrees and radians
+parent: Golang for Beginners - Standard Library
+nav_order: 32
+---
+
 ## Converting between degrees and radians
 
 - The trigonometric operations and geometric manipulation are usually done in radians; it is always useful to be able to convert these into degrees and vice versa. 
