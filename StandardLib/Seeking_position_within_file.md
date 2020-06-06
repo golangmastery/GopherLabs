@@ -1,3 +1,10 @@
+---
+layout: default
+title: Seeking a position within a file
+parent: Golang for Beginners - Standard Library
+nav_order: 40
+---
+
 # Seeking a position within a file
 
 - In some cases, you need to read from or write to a particular location in a file, such as an indexed file. 
