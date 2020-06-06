@@ -1,3 +1,11 @@
+---
+layout: default
+title: Changing file permissions
+parent: Golang for Beginners - Standard Library
+nav_order: 53
+---
+
+
 # Changing file permissions
 
 how file permissions can be changed programmatically. 
