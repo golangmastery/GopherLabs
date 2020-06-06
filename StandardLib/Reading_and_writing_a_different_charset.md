@@ -1,3 +1,10 @@
+---
+layout: default
+title: Reading/writing a different charset
+parent: Golang for Beginners - Standard Library
+nav_order: 39
+---
+
 # Reading/writing a different charset
 
 It is not an exception that the input from various sources could come in various charsets.
