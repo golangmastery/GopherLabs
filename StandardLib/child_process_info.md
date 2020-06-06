@@ -1,3 +1,10 @@
+---
+layout: default
+title: Retrieving child process information
+parent: Golang for Beginners - Standard Library
+nav_order: 8
+---
+
 ## Retrieving child process information
 
 - The recipe Calling an external process describes how to call the child process, synchronously and asynchronously. Naturally, to handle the process behavior you need to find out more about the process.  This recipe shows how to obtain the PID and elementary information about the child process after it terminates.
