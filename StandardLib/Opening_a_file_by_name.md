@@ -1,3 +1,10 @@
+---
+layout: default
+title: Opening a file by name
+parent: Golang for Beginners - Standard Library
+nav_order: 37
+---
+
 # Opening a file by name
 
 - File access is a very common operation used to store or read the data. 
