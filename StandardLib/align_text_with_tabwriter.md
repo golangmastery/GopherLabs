@@ -1,3 +1,11 @@
+---
+layout: default
+title: Aligning text with tabwriter
+parent: Golang for Beginners - Standard Library
+nav_order: 16
+---
+
+
 ## Aligning text with tabwriter
 
 - In certain cases, the output (usually data output) is done via tabbed text, which is formatted in well-arranged cells. This format could be achieved with the text/tabwriter package. The package provides the Writer filter, which transforms the text with the tab characters into properly formatted output text.
