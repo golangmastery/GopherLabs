@@ -1,3 +1,10 @@
+---
+layout: default
+title: Filtering file listings
+parent: Golang for Beginners - Standard Library
+nav_order: 55
+---
+
 #  Filtering file listings
 - you how to list the file paths, matching a given pattern. The list does not have to be from the same folder.
 
