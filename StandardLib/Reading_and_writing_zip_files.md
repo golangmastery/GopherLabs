@@ -1,3 +1,10 @@
+---
+layout: default
+title: Reading and writing ZIP files
+parent: Golang for Beginners - Standard Library
+nav_order: 45
+---
+
 # Reading and writing ZIP files
 
 - ZIP compression is a widely used compression format. It is usual to use the ZIP format for an application to upload a file set or, on the other hand, export zipped files as output. 
