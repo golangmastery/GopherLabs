@@ -1,3 +1,10 @@
+---
+layout: default
+title: Comparing two files
+parent: Golang for Beginners - Standard Library
+nav_order: 56
+---
+
 # Comparing two files
 
 - a hint on how to compare two files. The recipe will show you how to quickly determine whether the files are identical. The recipe will also present you with a way to find differences between the two.
