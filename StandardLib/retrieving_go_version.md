@@ -1,8 +1,8 @@
 ---
 layout: default
-title:  Retrieving the Golang version
-parent: Golang for Beginners
-nav_order: 39
+title: Retrieving the Golang version
+parent: Golang for Beginners - Standard Library
+nav_order: 1
 ---
 # Retrieving the Golang version
 
