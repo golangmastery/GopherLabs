@@ -1,6 +1,6 @@
 ---
 layout: default
-title:Handling operating system signals
+title: Handling operating system signals
 parent: Golang for Beginners - Standard Library
 nav_order: 6
 ---
