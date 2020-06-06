@@ -1,3 +1,10 @@
+---
+layout: default
+title: Converting strings to numbers
+parent: Golang for Beginners - Standard Library
+nav_order: 23
+---
+
 ## Converting strings to numbers
 
 Create the main.go file with the following content:
