@@ -1,3 +1,11 @@
+---
+layout: default
+title: Resolving the user home directory
+parent: Golang for Beginners - Standard Library
+nav_order: 57
+---
+
+
 # Resolving the user home directory
 
 - It could be beneficial for the program to know the user's home directory, for example, in case you need to store a custom user configuration or any other data related to the user. 
