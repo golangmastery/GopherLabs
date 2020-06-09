@@ -5,7 +5,7 @@ nav_order: 1
 description: " An Ultimate GopherLabs Hands-on Labs  "
 permalink: /
 ---
-[Join GopherLabs Community](https://discord.gg/S3GtFvT){: .btn .btn-green .mr-4 }
+[Join GopherLabs Community](https://discord.gg/S3GtFvT){: .btn .btn-green .mr-4 } [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K0E60M)
 
 ![img](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/gopherlabskube.png)
 
