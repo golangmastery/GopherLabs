@@ -1,0 +1,68 @@
+hash: 6aebefac13a71a57f6558549b5158b1882fb7b8b29f640fd9e3ed2ad06ddde8d
+updated: 2018-11-23T17:55:44.390522-06:00
+imports:
+- name: github.com/docker/distribution
+  version: 93e082742a009850ac46962150b2f652a822c5ff
+  subpackages:
+  - digestset
+  - reference
+- name: github.com/docker/docker
+  version: 90d35abf7b3535c1c319c872900fbd76374e521c
+  subpackages:
+  - api
+  - api/types
+  - api/types/blkiodev
+  - api/types/container
+  - api/types/events
+  - api/types/filters
+  - api/types/image
+  - api/types/mount
+  - api/types/network
+  - api/types/registry
+  - api/types/strslice
+  - api/types/swarm
+  - api/types/time
+  - api/types/versions
+  - api/types/volume
+  - client
+  - pkg/ioutils
+  - pkg/longpath
+  - pkg/system
+  - pkg/tlsconfig
+- name: github.com/docker/go-connections
+  version: 97c2040d34dfae1d1b1275fa3a78dbdd2f41cf7e
+  subpackages:
+  - nat
+  - sockets
+  - tlsconfig
+- name: github.com/docker/go-units
+  version: 2fb04c6466a548a03cb009c5569ee1ab1e35398e
+- name: github.com/docker/libtrust
+  version: aabc10ec26b754e797f9028f4589c5b7bd90dc20
+- name: github.com/konsorten/go-windows-terminal-sequences
+  version: 5c8c8bd35d3832f5d134ae1e1e375b69a4d25242
+- name: github.com/Microsoft/go-winio
+  version: 97e4973ce50b2ff5f09635a57e2b88a037aae829
+- name: github.com/opencontainers/go-digest
+  version: c9281466c8b2f606084ac71339773efd177436e7
+- name: github.com/pkg/errors
+  version: 059132a15dd08d6704c67711dae0cf35ab991756
+- name: github.com/Sirupsen/logrus
+  version: 29d7eb25e8ffa54207ff5a9a5c3d63e95be2cc39
+- name: golang.org/x/crypto
+  version: 3d3f9f413869b949e48070b5bc593aa22cc2b8f2
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/net
+  version: adae6a3d119ae4890b46832a2e88a95adc62b8e7
+  subpackages:
+  - context
+  - context/ctxhttp
+  - internal/socks
+  - proxy
+- name: golang.org/x/sys
+  version: 62eef0e2fa9b2c385f7b2778e763486da6880d37
+  subpackages:
+  - unix
+  - windows
+testImports: []
