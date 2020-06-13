@@ -1,0 +1,6 @@
+package: https://github.com/sangam14/GopherLabs/DockerSDK-Go/simple-app3
+import:
+- package: github.com/docker/docker
+  version: v17.05.0-ce-rc3
+  subpackages:
+  - client
