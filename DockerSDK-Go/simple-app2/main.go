@@ -115,7 +115,3 @@ func SwarmNodes(w http.ResponseWriter, r *http.Request) {
 
 }
 
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
-    Security
