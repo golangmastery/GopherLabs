@@ -84,15 +84,15 @@ func buildImage(client *client.Client, tags []string, dockerfile string)  error 
 }
 
 func main() {
-	client, err := client.NewEnvClient()
-	if err != nil {
-		log.Fatalf("Unable to create docker client: %s", err)
-	}
+	client, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+    if err != nil {
+        panic(err)
+    }
 
 	// Client, imagename and Dockerfile location
-	tags := []string{"this_is_a_imagename"}
+	tags := []string{"containername"}
 	dockerfile := "Dockerfile"
-	err = buildImage(client, tags, dockerfile)
+	err = buildImage(client,tags,dockerfile)
 	if err != nil {
 		log.Println(err)
 	}
