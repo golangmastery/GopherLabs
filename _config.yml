@@ -7,4 +7,3 @@ search_tokenizer_separator: /[\s/]+/
 aux_links:
   "GopherLabs on GitHub":
     - "//github.com/sangam14/GopherLabs/"
-footer_content: "Copyright &copy; 2019-2020 Sangam Biradar Distributed by KubeDaily <a href=\"https://gopherlabs.kubedaily.com/">Apache License 2.0</a>"
