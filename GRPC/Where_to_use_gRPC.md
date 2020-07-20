@@ -46,10 +46,9 @@ Protocol Buffers, unlike JSON, were designed to be both compact on the wire and 
 - Productive Programming Model: The programming model with gRPC is simple to understand and leads to developer productivity. Defining interfaces and canonical 
 message formats in an IDL means a lot of boilerplate code is auto-generated. 
 
-      - Forget the days of manually wiring up server handlers based on URI paths and then manually marshalling paths, query string parameters, requests, and
+- Forget the days of manually wiring up server handlers based on URI paths and then manually marshalling paths, query string parameters, requests, and
       response bodies. Similarly, forget the days of manually creating HTTP request objects, with all of the same overhead on the server side.
-      
-      - While there are myriad tools and libraries that can alleviate this burden for REST+JSON (including a great number of home-grown, proprietary solutions 
+- While there are myriad tools and libraries that can alleviate this burden for REST+JSON (including a great number of home-grown, proprietary solutions 
       within organizations and projects), they tend to vary significantly from one programming language to another, possibly even from one project to another. 
       And in some cases they are incomplete: one library, for example, may address one aspect (reduce boilerplate in servers) but fail to address others
       (common definition of interfaces and message schemas, reduce boilerplate in clients). gRPC is thorough: it addresses all of these concerns. It also does 
