@@ -1,3 +1,10 @@
+---
+layout: default
+title: Streaming
+parent: gRPC
+nav_order: 4
+---
+
 # Streaming
 
 - The closest siblings to gRPC are Thrift, an Apache project, and Twirp, open sourced by Twitch. But neither of these include support for streaming. gRPC, on the other hand,
