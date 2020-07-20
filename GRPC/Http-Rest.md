@@ -1,3 +1,10 @@
+---
+layout: default
+title: HTTP and REST
+parent: gRPC
+nav_order: 2
+---
+
 # HTTP and REST
 
 - HTTP is the protocol that powers the worldwide web. It stands for Hyper-Text Transfer Protocol. It’s a text-based request-response protocol.
