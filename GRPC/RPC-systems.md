@@ -1,3 +1,10 @@
+---
+layout: default
+title: RPC systems
+parent: gRPC
+nav_order: 3
+---
+
 # RPC systems
 
 Here we cover the typical traits shared by all RPC systems. There are systems that contain some of these traits, whereas mature systems provide them all:
