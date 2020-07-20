@@ -1,3 +1,11 @@
+---
+layout: default
+title:  What is gRPC ?
+parent: gRPC
+nav_order: 1
+---
+
+
 # What is gRPC ?
 
 - A logical place to start when answering, “What is gRPC,” is to first talk about what the letters mean. 
