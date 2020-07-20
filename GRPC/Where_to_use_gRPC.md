@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Where to use gRPC 
+title: Where to use gRPC ?
 parent: gRPC
 nav_order: 5
 ---
