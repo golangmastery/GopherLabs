@@ -1,3 +1,10 @@
+---
+layout: default
+title: What are Protocol Buffers ?
+parent: gRPC
+nav_order: 6
+---
+
 # What are Protocol Buffers ?
 
 - gRPC focuses on optimizing three layers of the OSI model:
