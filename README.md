@@ -12,7 +12,7 @@ permalink: /
 The Ultimate Workshop Track Specially Designed For You - Select Learning Paths 
 {: .label .label-blue }
 
-[Golang for Beginners](https://gopherlabs.kubedaily.com/Beginners/readme.html){: .btn .btn-purple .mr-2 } [Golang for Beginners - Standard Library ](https://gopherlabs.kubedaily.com/StandardLib/README.html){: .btn .btn-purple .mr-2 } [Data Structures and Algorithms](){: .btn .btn-purple .mr-2 } [Golang for Intermediate](){: .btn .btn-purple .mr-2 }  [Experts Talks - Built with Go ](){: .btn .btn-purple .mr-2 } 
+[Golang for Beginners](https://gopherlabs.kubedaily.com/Beginners/readme.html){: .btn .btn-purple .mr-2 } [Golang for Beginners - Standard Library ](https://gopherlabs.kubedaily.com/StandardLib/README.html){: .btn .btn-purple .mr-2 } [gRPC](https://gopherlabs.kubedaily.com/GRPC/README.html){: .btn .btn-purple .mr-2 } [Golang for Intermediate](){: .btn .btn-purple .mr-2 }  [Experts Talks - Built with Go ](){: .btn .btn-purple .mr-2 } 
 
 
 # Golang Developer Roadmap 2020
