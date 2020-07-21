@@ -1,9 +1,10 @@
 ---
 layout: default
-title: What are Protocol Buffers ?
+title: What are Protocol Buffers?
 parent: gRPC
 nav_order: 6
 ---
+
 
 # What are Protocol Buffers ?
 
