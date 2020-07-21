@@ -1,3 +1,9 @@
+---
+layout: default
+title: Scalar Value Types
+parent: gRPC
+nav_order: 7
+---
 # Scalar Value Types
 
 A scalar message field can have one of the following types – the table shows the type specified in the .proto file, and the corresponding type in the automatically generated class:
