@@ -9,6 +9,8 @@ permalink: /
 
 ![img](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/gopherlabskube.png)
 
+![Discord Banner 2](https://discordapp.com/api/guilds/673835807165120512/widget.png?style=banner2)
+
 The Ultimate Workshop Track Specially Designed For You - Select Learning Paths 
 {: .label .label-blue }
 
