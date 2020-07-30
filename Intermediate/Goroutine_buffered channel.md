@@ -29,11 +29,6 @@ func main() {
 }
 ```
 
-If the channel goes over capacity, we get fatal runtime error.
-[playground](https://play.golang.org/p/wQwnQPvdyP8) 
-
-### Sending and receiving from channel
-
 ```
 Output
 Siva@SIVA-laptop MINGW64 /d/VS code/Golang/learngo
@@ -41,3 +36,7 @@ $ go run buffered_channel.go
 Sent 10 to channel
 Received 10 from channel
 ```
+
+If the channel goes over capacity, we get fatal runtime error.
+[playground](https://play.golang.org/p/wQwnQPvdyP8) 
+
