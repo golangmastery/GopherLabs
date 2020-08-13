@@ -20,7 +20,7 @@ The Ultimate Workshop Track Specially Designed For You - Select Learning Paths
 
  ![Golang Developer Roadmap 2020](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/golang-developer-roadmap.png)
  
-If you are finding this young project interesting, do support us by clicking on "![GitHub stars](https://img.shields.io/github/stars/sangam14/Gopherlabs?style=social)"
+If you are finding this young project interesting, do support us by clicking on ![GitHub stars](https://camo.githubusercontent.com/18d8913b395ef435e215d9b769e8867d939589dd/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f73616e67616d31342f476f706865726c6162733f7374796c653d736f6369616c)
 
 
 
