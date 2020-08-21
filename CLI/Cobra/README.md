@@ -115,6 +115,7 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.
 
+```
 Usage:
   cobra [command]
 
@@ -132,4 +133,4 @@ Flags:
 
 Use "cobra [command] --help" for more information about a command.
 
-
+```
