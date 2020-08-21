@@ -212,6 +212,226 @@ create file structure like following
 
 ```
 
+main.go 
+
+
+```
+package main
+
+import "cli/cmd"
+
+func main() {
+	cmd.Execute()
+}
+
+````
+
+create folder Cmd 
+and under cmd directory 
+
+
+```
+package cmd
+
+import (
+	"fmt"
+
+	"github.com/spf13/cobra"
+)
+
+// byeCmd represents the bye command
+var byeCmd = &cobra.Command{
+	Use:   "bye",
+	Short: "says bye",
+	Long:  `This subcommand says bye`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("bye called")
+	},
+}
+
+func init() {
+	RootCmd.AddCommand(byeCmd)
+
+	// Here you will define your flags and configuration settings.
+
+	// Cobra supports Persistent Flags which will work for this command
+	// and all subcommands, e.g.:
+	// byeCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+	// Cobra supports local flags which will only run when this command
+	// is called directly, e.g.:
+	// byeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+
+
+```
+
+hello.go 
+```
+package cmd
+
+import (
+	"fmt"
+
+	"github.com/spf13/cobra"
+)
+
+// helloCmd represents the hello command
+var helloCmd = &cobra.Command{
+	Use:   "hello",
+	Short: "says hello",
+	Long:  `This subcommand says hello`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("hello called")
+	},
+}
+
+func init() {
+	RootCmd.AddCommand(helloCmd)
+
+	// Here you will define your flags and configuration settings.
+
+	// Cobra supports Persistent Flags which will work for this command
+	// and all subcommands, e.g.:
+	// helloCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+	// Cobra supports local flags which will only run when this command
+	// is called directly, e.g.:
+	// helloCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+```
+root.go
+```
+package cmd
+
+import (
+	"fmt"
+	"os"
+
+	homedir "github.com/mitchellh/go-homedir"
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+)
+
+var cfgFile string
+
+// RootCmd represents the base command when called without any subcommands
+var RootCmd = &cobra.Command{
+	Use:   "gopherlabs",
+	Short: "An example of cobra",
+	Long: `This application shows how to create modern CLI 
+applications in go using Cobra CLI library`,
+	// Uncomment the following line if your bare application
+	// has an action associated with it:
+	//	Run: func(cmd *cobra.Command, args []string) { },
+}
+
+// Execute adds all child commands to the root command and sets flags appropriately.
+// This is called by main.main(). It only needs to happen once to the rootCmd.
+func Execute() {
+	if err := RootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+}
+
+func init() {
+	cobra.OnInitialize(initConfig)
+
+	// Here you will define your flags and configuration settings.
+	// Cobra supports persistent flags, which, if defined here,
+	// will be global for your application.
+	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobra-gopherlabs.yaml)")
+
+	// Cobra also supports local flags, which will only run
+	// when this action is called directly.
+	RootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+// initConfig reads in config file and ENV variables if set.
+func initConfig() {
+	if cfgFile != "" {
+		// Use config file from the flag.
+		viper.SetConfigFile(cfgFile)
+	} else {
+		// Find home directory.
+		home, err := homedir.Dir()
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+
+		// Search config in home directory with name ".gopherlabs" (without extension).
+		viper.AddConfigPath(home)
+		viper.SetConfigName(".CLI")
+	}
+
+	viper.AutomaticEnv() // read in environment variables that match
+
+	// If a config file is found, read it in.
+	if err := viper.ReadInConfig(); err == nil {
+		fmt.Println("Using config file:", viper.ConfigFileUsed())
+	}
+}
+
+
+
+
+
+```
+
+## init go module 
+
+```
+
+go mod init cli
+
+```
+
+go.mod
+```
+module cli
+
+go 1.13
+
+require (
+	github.com/mitchellh/go-homedir v1.1.0
+	github.com/spf13/cobra v1.0.0
+	github.com/spf13/viper v1.7.1
+)
+
+
+```
+
+## run cli application 
+
+```
+
+sangam:CLI sangam$ go run main.go
+This application shows how to create modern CLI 
+applications in go using Cobra CLI library
+
+Usage:
+  gopherlabs [command]
+
+Available Commands:
+  bye         says bye
+  hello       says hello
+  help        Help about any command
+
+Flags:
+      --config string   config file (default is $HOME/.cobra-gopherlabs.yaml)
+  -h, --help            help for gopherlabs
+  -t, --toggle          Help message for toggle
+
+Use "gopherlabs [command] --help" for more information about a command.
+
+```
+
+
+
 
 
 
