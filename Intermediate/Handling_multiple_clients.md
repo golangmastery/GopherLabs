@@ -1,3 +1,11 @@
+---
+layout: default
+title: Handling multiple clients
+parent: Golang for Intermediate
+nav_order: 3
+---
+
+
 # Handling multiple clients
 
  - we covered how to create UDP and TCP servers. The sample codes are not ready to handle multiple clients simultaneously.
