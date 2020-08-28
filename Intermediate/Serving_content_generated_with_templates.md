@@ -1,3 +1,11 @@
+---
+layout: default
+title:  Serving content generated with templates
+parent: Golang for Intermediate
+nav_order: 8
+---
+
+
 ## Serving content generated with templates
 
 - For some purposes, it is not necessary to create highly dynamic web UI with all the JavaScript, and the static content with generated content could be sufficient. The Go standard library provides a way of constructing dynamically generated content. 
