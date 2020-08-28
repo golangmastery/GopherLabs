@@ -1,3 +1,11 @@
+---
+layout: default
+title: Serving static files
+parent: Golang for Intermediate
+nav_order: 7
+---
+
+
 # Serving static files
 - Almost any web application needs to serve static files. The serving of JavaScript files, static HTML pages, or CSS style sheets could be easily achieved with the use of the standard library. 
 
