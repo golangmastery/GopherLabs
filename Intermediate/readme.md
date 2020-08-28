@@ -1,3 +1,12 @@
+---
+layout: default
+title: Golang for Intermediate
+nav_order: 4
+has_children: true
+permalink: 
+---
+
+
 # Golang for Intermediate
 
 # Connecting the Network GO 201 
