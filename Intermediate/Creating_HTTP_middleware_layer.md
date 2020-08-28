@@ -1,3 +1,10 @@
+---
+layout: default
+title: Creating HTTP middleware layer
+parent: Golang for Intermediate
+nav_order: 6
+---
+
 # Creating HTTP middleware layer
 
 - Modern applications with web UI or REST API usually use the middleware mechanism to log the activity, or guard the security of the given interface.the implementation of such a middleware layer will be presented.
