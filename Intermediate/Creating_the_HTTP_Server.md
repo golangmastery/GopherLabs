@@ -1,3 +1,11 @@
+---
+layout: default
+title: Creating the HTTP Server
+parent: Golang for Intermediate
+nav_order: 4
+---
+
+
 ## Creating the HTTP Server
 
 - The creation of the HTTP server in Go is very easy, and the standard library provides more ways of how to do that. Let's look at the very basic one.
