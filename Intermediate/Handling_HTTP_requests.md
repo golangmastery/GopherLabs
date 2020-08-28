@@ -1,3 +1,11 @@
+---
+layout: default
+title: Handling HTTP requests
+parent: Golang for Intermediate
+nav_order: 5
+---
+
+
 # Handling HTTP requests
 
 - The applications usually use the URL paths and HTTP methods to define the behavior of the application. This recipe will illustrate how to leverage the standard library for handling different URLs and methods.
