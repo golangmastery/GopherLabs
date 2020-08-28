@@ -1,4 +1,11 @@
-# Handling redirects
+---
+layout: default
+title: Handling redirects
+parent: Golang for Intermediate
+nav_order: 9
+---
+
+# 
 
 - Redirects are the usual way of telling the client that the content was moved, or there is a needs to look somewhere else to accomplish the request. 
 we will see the way to implement redirects with the standard library.
