@@ -9,10 +9,10 @@ nav_order: 7
 
 A goroutine is a function or a method which is executed concurrently with the rest of the program.
 
-Syntax #
-You can create a goroutine by using the following syntax:
-
-# go function/method(input parameters)
+- Syntax 
+   - You can create a goroutine by using the following syntax:
+       
+        # go function/method(input parameters)
 
 Yes, it is that simple!
 The current goroutine evaluates the input parameters to the functions/methods which are executed in the new goroutines. Even our
