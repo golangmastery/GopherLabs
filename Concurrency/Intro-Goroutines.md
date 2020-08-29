@@ -85,7 +85,6 @@ func main() {
 
 - Now you can see the results from both goroutines we created in the main because we used the `time.Sleep()` function to cause a time delay which allows other 
 goroutines to finish before we exit the program.
-- You might have realized that this is not an efficient solution but we will solve this problem by using wait groups from the sync package in the upcoming lessons.
-As you are now familiar with the basics of goroutines.
+- You might have realized that this is not an efficient solution but we will solve this problem by using wait groups from the sync package.
 
 
