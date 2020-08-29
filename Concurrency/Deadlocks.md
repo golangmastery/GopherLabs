@@ -4,9 +4,9 @@ title: Deadlocks
 parent: Concurrency In Golang
 nav_order: 5
 ---
- # Deadlocks
- 
- ## What is a deadlock?
+
+# Deadlocks
+## What is a deadlock?
  - A deadlock occurs when all processes are blocked while waiting for each
 other and the program cannot proceed further.
 
