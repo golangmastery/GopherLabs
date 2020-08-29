@@ -1,3 +1,11 @@
+---
+layout: default
+title: Data Races and Race Conditions
+parent: Concurrency In Golang
+nav_order: 4
+---
+
+
 ## Data Races and Race Conditions
 
 One of the reasons why concurrency is hard to achieve is because of data races.
@@ -59,8 +67,55 @@ In the code above, we have a balance of 100 . We first execute the deposit() ope
 50 from our balance which makes the final 60 . However, if you run the code, the final value of balance will come out to be 50 . This is as a result of a 
 race condition which has compromised the correctness of the program due to an incorrect order of execution of operations.
 
+![](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/race-condition.png)
 
 
+# Data Race Detector 
 
+Amazingly, Go has its own in-built data race detector which you can learn more about [here](https://golang.org/doc/articles/race_detector.html). 
+The code below runs the data race detector on our previous example. Let’s see how it works:
+
+```
+package main
+import "fmt"
+func deposit(balance *int,amount int){
+    *balance += amount //add amount to balance
+}
+func withdraw(balance *int, amount int){
+    *balance -= amount //subtract amount from balance
+}
+func main() {
+    balance := 100
+    go deposit(&balance,10) //depositing 10
+    withdraw(&balance, 50) //withdrawing 50
+    fmt.Println(balance)
+ }   
+
+
+```
+
+output 
+
+
+```
+WARNING: DATA RACE
+Read at 0x00c42005e168 by goroutine 6:
+  main.deposit()
+      /usercode/main.go:5 +0x3b
+Previous write at 0x00c42005e168 by main goroutine:
+  main.main()
+      /usercode/main.go:18 +0xb0
+Goroutine 6 (running) created at:
+  main.main()
+      /usercode/main.go:16 +0x86
+==================
+Found 1 data race(s)
+exit status 66
+
+
+```
+
+## How to avoid data races? 
+In Go, we can avoid data races by using channels or locks. They will allow us to synchronize memory access to all shared mutable data
 
 
