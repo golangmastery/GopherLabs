@@ -1,3 +1,10 @@
+---
+layout: default
+title: Concurrency vs. Parallelism
+parent: Concurrency In Golang
+nav_order: 2
+---
+
 # Concurrency vs. Parallelism
 
 A lot of people confuse concurrency with parallelism because they both somewhat imply executing code simultaneously 
@@ -68,7 +75,9 @@ two tasks are totally up to you. This is where you will need to come up with a c
 
 -  Let’s look at another example to make things more clear. In the illustration below, two queues are lined up to get coffee from the coffee machines. Concurrency will decide how the two queues will coordinate and manage themselves to get coffee from one coffee machine. The idea is to add a design which will ensure the independence of subtasks such that if they run in parallel, our problem can be more efficiently solved. On the other hand, in the parallelism approach, each queue has its own coffee machine and the two queues are completely independent of each other.
 
+![](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/concurrencyvsparrelism.png) 
 
+A famous talk on [Concurrency is not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso&t=338s) was given by Rob Pike who is known for his work on Go. You should definitely watch it for more understanding! I am hoping that the concept regarding concurrency and parallelism makes more sense now.
 
    
    
