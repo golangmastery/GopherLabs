@@ -2,7 +2,7 @@
 layout: default
 title: Mutex and RWMutex
 parent: Concurrency In Golang
-nav_order: 12
+nav_order: 13
 ---
 
 # Mutex
