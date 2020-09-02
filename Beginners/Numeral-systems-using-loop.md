@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Numeral Systems
+title: Numeral Systems Loop
 parent: Golang for Beginners
 nav_order: 5
 ---
 
 
-##  Numeral Systems
+##  Numeral Systems - Loop
 
 
 ---
 ## print decimal,binary,hexadecimal number from 10 to 15 using loop 
+
 4.Numeral systems -  using loop
 
-     
      
           package main
 
@@ -25,6 +25,8 @@ nav_order: 5
 	        }
           }
  
+ [Run](https://play.golang.org/p/TxcV48laVMk){: .btn .btn-blue }
+
  output:     
  ```
                 0 	 0 	 0 
