@@ -36,9 +36,10 @@ func main() {
 	fmt.Printf("%v \n", g)
 }
 ```
+[RUN](https://play.golang.org/p/4s_K8I_18ih){: .btn .btn-blue }
 
-%v the value in a default format
-%v will give you the values of variable 
+`%v` the value in a default format
+`%v` will give you the values of variable 
 
 
 
@@ -66,6 +67,7 @@ func main() {
 	fmt.Printf("%T \n", g)
 }
 ```
+[RUN](https://play.golang.org/p/9jf7xEZL-s8){: .btn .btn-blue } <br>
 
-%T a Go-syntax representation of the type of the value
+`%T` a Go-syntax representation of the type of the value
 in this above go program %T provide you the type of variable 
