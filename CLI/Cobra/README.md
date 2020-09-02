@@ -432,6 +432,84 @@ Use "gopherlabs [command] --help" for more information about a command.
 
 
 
+# Go flag 
+
+
+```
+package main
+
+import (
+    "flag"
+    "log"
+)
+
+var (
+    account, password string
+    debug             bool
+)
+
+func main() {
+    flag.StringVar(&account, "account", account, "account to login")
+    flag.StringVar(&password, "password", password, "password for account")
+    flag.BoolVar(&debug, "debug", debug, "dump account and password or not")
+
+    flag.Parse()
+
+    if account == "" || password == "" {
+        flag.PrintDefaults()
+        return
+    }
+
+    if debug {
+        log.Println("account:", account, "password:", password)
+    }
+
+    log.Println("end")
+}
+
+
+
+```
+
+Description:
+
+- 1. First set the parameter name and data type that will be passed in:
+      -`flag.StringVar(&account, "account", account, "account to login")`
+      - `flag.StringVar(&password, "password", password, "password for account")`
+      - `flag.BoolVar(&debug, "debug", debug, "dump account and password or not")`
+    - Call `flag.Parse()`processing incoming parameters
+    - Verify the information is correct, otherwise you can call flag.PrintDefaults()output specification
+    - When executed, the available `--or -access` parameter name, parameter value may be added before `=or` blank, eg:
+     -  `-a=1`
+     - `-a 1`
+     - `--a=1`
+     - ` -a=1`
+     
+- carried out:
+
+  - go run .:
+```
+    -account string
+            account to login
+    -debug
+            dump account and password or not
+    -password string
+            password for account
+```
+ - go run . -account 123 -password 321:
+
+```
+    2020/01/16 15:22:13 end
+```
+- go run . --account 123 --password 321 --debug:
+
+```
+    2020/01/16 15:22:44 account: 123 password: 321
+    2020/01/16 15:22:44 end
+```
+
+
+
 
 
 
