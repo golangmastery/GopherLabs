@@ -8,11 +8,11 @@ nav_order: 2
 
 # Numeral Systems - Decimal 
 
-	
-
 ---
 
 1.Numeral systems -  Decimal
+
+```
 
     package main
 
@@ -21,13 +21,17 @@ nav_order: 2
     func main() {
 	fmt.Println(42) 
     }
-
     
+ ```   
+
+[Run](https://play.golang.org/p/79__Y2CzdPh){: .btn .btn-blue }
+
 Output:    
-     
+
+```  
    42
+  Program exited.
+```
 
-   Program exited.
 
 
-<<<< ------  previous :[Lets Start With First Hello world Program](https://collabnix.github.io/gopherlabs/Beginners/hello-world.html)                                                     <br>                                                           Next : ---------- >>       [Numeral systems - binary](https://collabnix.github.io/gopherlabs/Beginners/binary_go.html)
