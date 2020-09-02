@@ -18,16 +18,20 @@ It allows us to say this file is stored with the UTF8 encoding, so the binary co
 
      
    ```   
-       package main
+ package main
 
-       import "fmt"
+import "fmt"
 
-      func main() {
-	    for i := 60; i < 122; i++ {
-	   	fmt.Printf("%d \t %b \t %x \t %q \n", i, i, i, i)
-	    }
-     }
+func main() {
+	for i := 60; i < 122; i++ {
+		fmt.Printf("%d \t %b \t %x \t %q \n", i, i, i, i)
+	}
+}
+
+ 
+
    ```
+  [RUN](https://play.golang.org/p/pDZK6lHdtfL){: .btn .btn-blue }
  output:     
  ```
 60 	 111100 	 3c 	 '<' 
@@ -96,9 +100,7 @@ It allows us to say this file is stored with the UTF8 encoding, so the binary co
 ```
                
 
-
-as we seen decimal,binary and hexadecimal programs in Go , in this above UTF-8 program annotaition %q is used for UTF-8 character in 
-coding.
+as we seen decimal,binary and hexadecimal programs in Go , in this above UTF-8 program annotaition %q is used for UTF-8 character in coding.
 Note:-UTF-8 has been the dominant character encoding for the World Wide Web since 2009, 
 and as of March 2018 accounts for 91.0% of all Web pages. The Internet Mail Consortium(IMC) 
 recommended that all e-mail programs be able to display and create mail using UTF-8,
