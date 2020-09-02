@@ -15,6 +15,8 @@ nav_order: 3
     func main() {
 	 fmt.Printf("%d - %b \n", 42, 42)
     }
+    
+[Run](https://play.golang.org/p/8oA-JOz0flp){: .btn .btn-blue }
 
 Output:
      
@@ -23,7 +25,7 @@ Output:
     Program exited.
     
   
-Try it On Golang Play Ground  - (https://play.golang.org/p/8oA-JOz0flp) <br> 
+
 in above program the annotation verb %b formats a number in binary  Ex:- which represent 101010 ( base 2 format)
 and  the annotation verb %d formats a number in Base 10   Ex:which represent 42 ( base 10 format)
 
