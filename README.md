@@ -17,7 +17,7 @@ The Ultimate Workshop Track Specially Designed For You - Select Learning Paths
 
 # Gopherlabs Community 
 
-Gopherlabs is an independent community project founded by [Sangam Biradar](https://twitter.com/BiradarSangam/), Docker Community Leader,Traefik Ambassdor,Okteto Community ,India which is now being built & shaped by a growing community and mentoring and educating free of cost ! 
+Gopherlabs is an independent community project founded by [Sangam Biradar](https://twitter.com/BiradarSangam/), Docker Community Leader,Traefik Ambassdor,Okteto Community lead ,India which is now growing community and He is frequently mentoring and educating free of cost ! 
 
 
 # Golang Developer Roadmap 2020
