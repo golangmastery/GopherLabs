@@ -45,7 +45,6 @@ gh_edit_repository: "https://github.com/sangam14/GopherLabs/" # the github URL f
 gh_edit_branch: "master" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
-# Color scheme supports "light" (default) and "dark"
-color_scheme: dark
+
 
     
