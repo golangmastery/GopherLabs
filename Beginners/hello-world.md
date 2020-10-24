@@ -8,9 +8,29 @@ nav_order: 1
 
 ## Lets Start With First Hello world Program 
 
-![](https://raw.githubusercontent.com/collabnix/gopherlabs/master/img_Beginners/hello_world_gopherlabs.png)
+```
+// visit :-  gopherlabs.kubedaily.com
+package main
 
-Go PlayGround:-(https://play.golang.org/p/-N_yGtploWl)
+// main package declaration
+import "fmt"
+
+// import librares
+func main() {
+	// declare main function with func keyforword followed by main()
+	fmt.Println("Hello World")
+	// fmt is fromat
+}
+
+// output :- hello_world
+
+
+```
+
+[Run](https://play.golang.org/p/b5LpJFoesBI){: .btn .btn-blue }
+
+
+
 
 - A complete program is created by linking a single, unimported package called the main package with all the packages it imports, transitively. The main package must have package name main and declare a function main that takes no arguments and returns no value.
 
@@ -26,5 +46,7 @@ Go PlayGround:-(https://play.golang.org/p/-N_yGtploWl)
  
 -----
 
-Next:---- >>[Numeral Systems - Decimal](https://collabnix.github.io/gopherlabs/Beginners/Decimal.html)
+[Next >> Numeral Systems - Decimal ](https://gopherlabs.kubedaily.com/Beginners/Decimal.html)
+
+
 
