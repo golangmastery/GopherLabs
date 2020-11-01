@@ -45,5 +45,5 @@ http://gopherlabs.kubedaily.com
 
 * 
 
-.play -edit ./main/main.go
+.play  ./main/main.go
 
