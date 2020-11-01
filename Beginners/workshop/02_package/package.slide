@@ -1,0 +1,48 @@
+
+Welcome to Ultimate Go workshops
+
+Sangam Biradar
+Gopherlabs Community  
+http://gopherlabs.kubedaily.com 
+@BiradarSangam
+
+* About Me
+
+- Docker Community Leader Award Winner 2020
+- Golang | Rust | Docker | gRPC | Kubernetes | Cloud Native Developer 
+- Author "lightweight Kubernetes K3s" with Packt Publication
+- Okteto & Traefik Ambassdor 
+- Presented many technical talks and workshops WorldWide 
+- Community Builder 
+
+
+* Join Gopherlabs Community 
+
+- [[https://discord.gg/S3GtFvT][Join The Discord Server]].
+
+- We are one of the #trending Community Forks 
+- Weekly Meetups at gopherlabs discord
+
+
+* Getting Started - Lab03
+
+- Package 
+
+* 
+
+.code ./icomefromalaska/name2.go
+
+* 
+.code ./stringutil/name.go
+
+*
+.code ./stringutil/reverse.go
+
+* 
+
+.code ./stringutil/reverseTwo.go
+
+* 
+
+.play ./main/main.go
+
