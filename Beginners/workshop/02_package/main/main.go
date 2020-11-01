@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/sangam14/GopherLabs/02_package/stringutil"
-	"github.com/sangam14/GopherLabs02_package/icomefromalaska"
+	"https://github.com/sangam14/GopherLabs/Beginners/workshop/02_package/stringutil"
+	"https://github.com/sangam14/GopherLabs/Beginners/workshop/02_package/icomefromalaska"
 	
 )
 
