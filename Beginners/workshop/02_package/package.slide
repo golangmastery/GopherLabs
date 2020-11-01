@@ -36,6 +36,7 @@ http://gopherlabs.kubedaily.com
 .code ./stringutil/name.go
 
 *
+
 .code ./stringutil/reverse.go
 
 * 
@@ -44,5 +45,5 @@ http://gopherlabs.kubedaily.com
 
 * 
 
-.play ./main/main.go
+.play -edit ./main/main.go
 
