@@ -1,0 +1,79 @@
+Welcome to Ultimate Go workshops
+
+Sangam Biradar
+Gopherlabs Community  
+http://gopherlabs.kubedaily.com 
+@BiradarSangam
+
+* About Me
+
+- Docker Community Leader Award Winner 2020
+- Golang | Rust | Docker | gRPC | Kubernetes | Cloud Native Developer 
+- Author "lightweight Kubernetes K3s" with Packt Publication
+- Okteto & Traefik Ambassdor 
+- Presented many technical talks and workshops WorldWide 
+- Community Builder 
+
+
+* Join Gopherlabs Community 
+
+- [[https://discord.gg/S3GtFvT][Join The Discord Server]].
+
+- We are one of the #trending Community Forks 
+- Weekly Meetups at gopherlabs discord
+
+
+*  Variable - Lab03
+
+-  Short variable declarations  
+-  variable with zero value   
+-  Declare Variable 
+-  Declare Many Variable  
+-  init many variable at once 
+-  init mixed up types varible 
+-  init variable using short variable declaration 
+-  exercise 
+
+* Short variable declarations  
+
+.play ./01_shorthand/01/main.go
+
+* 
+
+.play ./01_shorthand/02/main.go
+
+* variable with zero value   
+
+.play ./02_var_zero-value/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/variable_with_zero_value.html
+
+* deep drive - variables 
+- Declare variable
+.play ./03_less-emphasis/01_declare-variable/var.go
+
+*  declare more than one variable
+.play ./03_less-emphasis/02_declare-many-at-once/var.go
+
+* init many at once 
+
+.play ./03_less-emphasis/03_init-many-at-once/var.go
+
+* 
+
+.play ./03_less-emphasis/04_infer-type/var.go
+
+* infer mix up types 
+
+.play ./03_less-emphasis/05_infer-mixed-up-types/var.go
+
+* init short variable declaration
+
+.play  ./03_less-emphasis/06_init-shorthand/var.go
+
+* exercise
+
+
+
+
+
