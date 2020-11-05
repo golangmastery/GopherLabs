@@ -1,0 +1,230 @@
+Welcome to Ultimate Go workshops
+
+Sangam Biradar
+Gopherlabs Community  
+http://gopherlabs.kubedaily.com 
+@BiradarSangam
+
+* About Me
+
+- Docker Community Leader Award Winner 2020
+- Golang | Rust | Docker | gRPC | Kubernetes | Cloud Native Developer 
+- Author "lightweight Kubernetes K3s" with Packt Publication
+- Okteto & Traefik Ambassdor 
+- Presented many technical talks and workshops WorldWide 
+- Community Builder 
+
+
+* Join Gopherlabs Community 
+
+- [[https://discord.gg/S3GtFvT][Join The Discord Server]].
+
+- We are one of the #trending Community Forks 
+- Weekly Meetups at gopherlabs discord
+
+
+* Getting Started - Lab01
+
+- Write Your First Hello World Program 
+- Numeral System - Decimal , Binary , Hexadecimal 
+- UTF-8 
+
+* Hello World 
+
+.play ./01_getting-started/01_helloWorld/main.go 
+
+.link https://gopherlabs.kubedaily.com/Beginners/hello-world.html Blog Post 
+
+* Numeral Systems - Decimal 
+
+.play   ./01_getting-started/02_numeral-systems/01_decimal/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/Decimal.html Blog Post 
+
+* Numeral Systems - Binary
+
+.play   ./01_getting-started/02_numeral-systems/02_binary/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/binary_go.html Blog Post 
+
+* Numeral Systems - Hexadecimal
+
+.play  ./01_getting-started/02_numeral-systems/03_hexadecimal/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/Hexadecimal.html Blog Post 
+
+* Numeral Systems - Loop 
+
+.play  ./01_getting-started/02_numeral-systems/04_loop/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/Numeral-systems-using-loop.html Blog Post 
+
+
+* UTF 8 => Unicode Transformation Format 8-bit 
+
+.play ./01_getting-started/03_UTF-8/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/UTF-8.html Blog Post 
+
+* Getting Started - Lab02
+
+- Package 
+
+.code ./02_package/icomefromalaska/name2.go
+
+.code ./02_package/stringutil/name.go
+
+*
+
+.code ./02_package/stringutil/reverse.go
+
+* 
+
+.code ./02_package/stringutil/reverseTwo.go
+
+* 
+
+.play  ./02_package/main/main.go
+
+
+*  Variable - Lab03
+
+-  Short variable declarations  
+-  variable with zero value   
+-  Declare Variable 
+-  Declare Many Variable  
+-  init many variable at once 
+-  init mixed up types varible 
+-  init variable using short variable declaration 
+-  exercise 
+
+* Short variable declarations  
+
+.play  -edit ./03_variables/01_shorthand/01/main.go
+
+* 
+
+.play ./03_variables/01_shorthand/02/main.go
+
+* variable with zero value   
+
+.play ./03_variables/02_var_zero-value/main.go
+
+.link https://gopherlabs.kubedaily.com/Beginners/variable_with_zero_value.html
+
+* deep drive - variables 
+- Declare variable
+.play ./03_variables/03_less-emphasis/01_declare-variable/var.go
+
+*  declare more than one variable
+.play ./03_variables/03_less-emphasis/02_declare-many-at-once/var.go
+
+* init many at once 
+
+.play ./03_variables/03_less-emphasis/03_init-many-at-once/var.go
+
+* 
+
+.play ./03_variables/03_less-emphasis/04_infer-type/var.go
+
+* infer mix up types 
+
+.play ./03_variables/03_less-emphasis/05_infer-mixed-up-types/var.go
+
+* init short variable declaration
+
+.play  ./03_variables/03_less-emphasis/06_init-shorthand/var.go
+
+*
+
+
+
+    package main
+    import "fmt"
+    var a = "this is stored in the variable a"     // package scope
+    var b, c string = "stored in b", "stored in c" // package scope
+    var d string                                   // package scope
+  func main() {
+	d = "stored in d" // declaration above; assignment here; package scope
+	var e = 42        // function scope - subsequent variables have func scope:
+	f := 43
+	g := "stored in g"
+	h, i := "stored in h", "stored in i"
+	j, k, l, m := 44.7, true, false, 'm' // single quotes
+	n := "n"                             // double quotes
+	o := `o`                             // back ticks
+*
+    fmt.Println("a - ", a)
+	fmt.Println("b - ", b)
+	fmt.Println("c - ", c)
+	fmt.Println("d - ", d)
+	fmt.Println("e - ", e)
+	fmt.Println("f - ", f)
+	fmt.Println("g - ", g)
+	fmt.Println("h - ", h)
+	fmt.Println("i - ", i)
+	fmt.Println("j - ", j)
+	fmt.Println("k - ", k)
+	fmt.Println("l - ", l)
+	fmt.Println("m - ", m)
+	fmt.Println("n - ", n)
+	fmt.Println("o - ", o)
+ }
+
+.link https://play.golang.org/p/iEDowAv4DnF play 
+
+*  scope - Lab04
+
+.play ./04_scope/01_package-scope/01/main.go
+
+* package level scope
+
+.play  ./04_scope/01_package-scope/02_visibility/main/main.go
+
+* block scope 
+
+.play ./04_scope/02_block-scope/01_this-does-not-compile/main.go
+
+* closure 
+
+.play ./04_scope/02_block-scope/02_closure/01/main.go
+
+*
+
+.play ./04_scope/02_block-scope/02_closure/02/main.go
+* 
+
+.play ./04_scope/02_block-scope/02_closure/03/main.go
+
+* 
+
+.play ./04_scope/02_block-scope/02_closure/04/main.go
+
+* order matter 
+
+.play ./04_scope/03_order-matters/main.go
+
+* variable shadowing 
+
+.play ./04_scope/04_variable-shadowing/main.go
+
+* same package
+     
+.code  ./04_scope/05_same-package/main.go
+.play  ./04_scope/05_same-package/same.go 
+
+* blank identifier 
+
+- invalid code 
+.play ./05_blank-identifier/01_invalid-code/main.go
+
+* 
+
+.play  ./05_blank-identifier/02_http-get_example/01_with-error-checking/main.go
+
+* 
+
+.play  ./05_blank-identifier/02_http-get_example/02_no-error-checking/main.go
+
+
+
