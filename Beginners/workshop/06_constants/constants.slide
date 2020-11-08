@@ -30,4 +30,27 @@ https://gopherlabs.kubedaily.com
 
 .play ./02_multiple-initialization/main.go
 
+* constant 
+
+- Declaring constant
+- multiple constant 
+- Iota is a basic tool for enumerated constants
+
 * 
+- Declaring Constant 
+.play ./01_constant/main.go
+
+* 
+- multiple constant 
+.play ./02_multiple-initialization/main.go
+* 
+- Iota is a basic tool for enumerated constants
+.play ./03_iota/main.go
+* 
+.play ./04_iota/main.go
+*
+.play ./05_iota/main.go
+*
+.play ./06_iota/main.go
+*
+.play ./07_iota/main.go
