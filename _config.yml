@@ -45,6 +45,28 @@ gh_edit_repository: "https://github.com/sangam14/GopherLabs/" # the github URL f
 gh_edit_branch: "master" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
+ga_tracking: UA-83EBT5GRLY
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
-
+plugins:
+  - jekyll-seo-tag
     
+   
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+  # ignore:
+  #   envs: all      
+      
+
+  
