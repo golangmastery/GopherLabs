@@ -33,3 +33,22 @@ If you are finding this young project interesting, do support us by clicking on 
 
 # Awesome Essential Golang Tools & Library
 
+<details><summary> Audio and Music - Libraries for manipulating audio </summary>
+<table style="width:100%">
+
+   <tr>
+   <th> <a href="https://github.com/mewkiz/flac">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mewkiz&repo=flac&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/Comcast/gaad">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Comcast&repo=gaad&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+  
+  
+  
+</table>
+</details>
