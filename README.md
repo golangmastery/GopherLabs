@@ -39,7 +39,7 @@ If you are finding this young project interesting, do support us by clicking on 
  
  <tr>
    <th> <a href="https://github.com/spf13/cobra">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mewkiz&repo=flac&theme=solarized-light"/>
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=spf13&repo=cobra&theme=solarized-light"/>
 </a>
  </th>
    <th>
@@ -98,13 +98,24 @@ If you are finding this young project interesting, do support us by clicking on 
   </tr>
   
    <tr>
-   <th> <a href="https://github.com/tcnksm/gcli">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tcnksm&repo=gcli&theme=solarized-light"/>
+   <th> <a href="https://github.com/peterh/liner">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=peterh&repo=liner&theme=solarized-light"/>
 </a>
  </th>
    <th>
-   <a href="https://github.com/posener/complete">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=posener&repo=complete&theme=solarized-light"/>
+   <a href="https://github.com/jawher/mow.cli">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jawher&repo=mow.cli&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+  <tr>
+   <th> <a href="https://github.com/integrii/flaggy">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=integrii&repo=flaggy&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/mkideal/cli">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mkideal&repo=cli&theme=solarized-light"/>
 </a>
   </th> 
   </tr>
