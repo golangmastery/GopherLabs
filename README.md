@@ -33,6 +33,51 @@ If you are finding this young project interesting, do support us by clicking on 
 
 # Awesome Essential Golang Tools & Library
 
+
+<details><summary>  Command Line - Libraries for building standard or basic Command Line applications </summary>
+<table style="width:100%">
+ 
+ <tr>
+   <th> <a href="https://github.com/spf13/cobra">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mewkiz&repo=flac&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/urfave/cli">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=urfave&repo=cli&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+  
+   <tr>
+   <th> <a href="https://github.com/alecthomas/kingpin">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=alecthomas&repo=kingpin&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/dnote/dnote">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=dnote&repo=dnote&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+  
+   <tr>
+   <th> <a href="https://github.com/jessevdk/go-flags">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jessevdk&repo=go-flags&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/chzyer/readline">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=chzyer&repo=readline&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+
+
+</table>
+</details>
+
+
 <details><summary> Audio and Music - Libraries for manipulating audio </summary>
 <table style="width:100%">
 
