@@ -72,6 +72,42 @@ If you are finding this young project interesting, do support us by clicking on 
 </a>
   </th> 
   </tr>
+  
+   <tr>
+   <th> <a href="https://github.com/spf13/pflag">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=spf13&repo=pflag&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/docopt/docopt.go">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=chzyer&repo=readline&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+
+ <tr>
+   <th> <a href="https://github.com/mitchellh/cli">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=mitchellh&repo=cli&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/alexflint/go-arg">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=alexflint&repo=go-arg&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
+  
+   <tr>
+   <th> <a href="https://github.com/tcnksm/gcli">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=tcnksm&repo=gcli&theme=solarized-light"/>
+</a>
+ </th>
+   <th>
+   <a href="https://github.com/posener/complete">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=posener&repo=complete&theme=solarized-light"/>
+</a>
+  </th> 
+  </tr>
 
 
 </table>
