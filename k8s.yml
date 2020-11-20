@@ -28,6 +28,6 @@ spec:
   type: ClusterIP  
   ports:
   - name: "hello-world"
-    port: 3999:8080
+    port: 8080
   selector:
     app: gopherlabs
