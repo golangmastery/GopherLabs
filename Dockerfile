@@ -11,4 +11,4 @@ EXPOSE 3999
 
 WORKDIR /GopherLabs/present
 
-ENTRYPOINT [ "present", "-play=false", "-http=0.0.0.0:3999"]
+ENTRYPOINT [ "/go/bin/present", "-play=false", "-http=0.0.0.0:3999"]
