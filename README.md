@@ -21,6 +21,15 @@ The Ultimate Workshop Track Specially Designed For You - Select Learning Paths
 Gopherlabs is an independent community project founded by [Sangam Biradar](https://twitter.com/BiradarSangam/), Docker Community Leader,Traefik Ambassdor,Okteto Community lead ,India which is now growing community and He is frequently mentoring and educating free of cost ! 
 
 
+# Gopherlabs Episodes Series 
+
+| title                                                                                 | videos  |
+|---------------------------------------------------------------------------------------|---------|
+| Episode 01 - Spago - Self Contained ML & NLP Library in Golang - Matteo Grella , EXOP | [YouTube](https://www.youtube.com/watch?v=kDqRKNrA7zk)  |
+| Episode 02 - The Case for Deep Learning in Go by chewxy                               | [YouTube](https://www.youtube.com/watch?v=vnA-aSoQSeE&t=3608s) |
+
+email if you want to be part of any episode :- kubedaily@gmail.com 
+
 # Golang Developer Roadmap 2020
 
  ![Golang Developer Roadmap 2020](https://raw.githubusercontent.com/sangam14/GopherLabs/master/img/golang-developer-roadmap.png)
