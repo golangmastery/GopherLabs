@@ -1,6 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Specify your gem's dependencies in jekyll-admin.gemspec
+# gem "github-pages", group: :jekyll_plugins
 gemspec
-
-

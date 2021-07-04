@@ -1,0 +1,911 @@
+<!DOCTYPE html><html lang="en">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Articles - Brief (Info) - GopherLabs</title>
+
+<meta name="description" content="Brief article list with info.">
+<link rel="canonical" href="https://gopherlabs.kubedaily.com/articles/brief-info.html"><link rel="alternate" type="application/rss+xml" title="GopherLabs" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg"  width="300.000000pt" height="300.000000pt" viewBox="0 0 300.000000 300.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"> <path d="M1380 2978 c-582 -38 -1106 -449 -1288 -1008 -59 -182 -67 -240 -67 -515 0 -288 3 -308 88 -495 137 -304 278 -485 515 -662 141 -105 372 -216 372 -179 0 6 -6 11 -14 11 -8 0 -16 7 -20 15 -3 8 -17 15 -30 15 -32 0 -62 13 -166 74 -124 72 -182 118 -301 236 -88 88 -189 207 -189 223 0 3 -18 32 -40 65 -22 33 -40 64 -40 70 0 6 17 0 37 -14 52 -36 135 -76 218 -107 78 -28 105 -35 184 -42 30 -3 57 -8 60 -11 4 -3 -6 -16 -21 -29 -15 -13 -24 -25 -20 -27 9 -4 42 -108 42 -131 0 -10 5 -17 10 -17 6 0 10 -6 10 -13 0 -19 24 -67 34 -67 4 0 5 8 1 17 -4 10 -24 63 -44 119 l-37 100 29 27 c25 23 38 27 110 30 l82 3 -95 2 c-162 4 -281 30 -443 97 -118 50 -182 106 -224 197 -34 72 -62 145 -68 177 -17 94 -25 173 -27 261 -3 147 3 293 12 305 4 6 10 30 13 55 3 25 8 54 10 65 3 11 8 34 12 50 4 17 10 39 15 50 4 11 13 40 20 65 14 54 119 270 132 270 4 0 8 6 8 13 0 20 56 98 65 90 4 -5 5 -3 2 3 -9 16 139 181 225 251 130 106 290 205 378 233 14 5 63 22 110 39 47 17 95 31 107 31 12 0 25 5 28 10 4 6 10 8 13 6 4 -2 35 1 67 8 126 26 341 27 485 1 14 -2 41 -6 60 -9 64 -9 323 -100 351 -123 8 -7 19 -13 23 -13 19 0 206 -123 252 -165 6 -5 38 -34 72 -64 34 -30 58 -59 55 -65 -3 -6 -3 -8 2 -4 4 4 32 -23 62 -60 29 -37 59 -74 66 -82 60 -74 184 -315 194 -377 3 -19 10 -36 14 -39 5 -3 9 -15 9 -28 0 -12 3 -26 7 -30 4 -3 8 -17 10 -29 1 -12 7 -40 13 -62 20 -84 24 -155 22 -450 -1 -33 -1 -64 -1 -70 0 -5 -9 -71 -20 -145 -19 -130 -45 -227 -66 -242 -5 -4 -6 -8 -2 -8 9 0 -33 -82 -69 -137 -12 -18 -25 -29 -29 -25 -5 4 -5 2 -1 -5 10 -18 -54 -89 -213 -233 -98 -88 -112 -97 -216 -138 -122 -48 -197 -63 -360 -69 -132 -5 -160 -3 -234 16 -149 38 -239 88 -289 163 -23 35 -26 51 -26 112 1 83 16 113 78 157 46 34 42 38 -8 8 -19 -11 -44 -36 -56 -56 -27 -45 -36 -138 -20 -189 24 -74 148 -166 264 -195 27 -7 43 -16 39 -22 -3 -5 -1 -7 4 -4 17 11 103 -4 96 -16 -3 -6 -1 -7 5 -3 6 3 71 8 144 11 144 4 284 34 386 80 50 23 75 18 30 -6 -13 -7 -25 -15 -28 -19 -8 -12 -140 -90 -140 -83 0 3 -8 -1 -17 -10 -41 -36 -225 -106 -373 -141 -167 -40 -369 -48 -550 -22 -58 9 -108 16 -112 16 -4 0 -5 6 -2 14 4 10 -14 19 -62 32 l-67 18 -24 -28 c-13 -16 -23 -35 -21 -44 5 -27 54 -36 105 -19 41 14 53 13 142 -5 73 -16 135 -21 256 -21 193 -1 310 18 480 75 268 90 393 177 706 488 153 152 240 323 275 539 23 143 24 527 2 646 -83 435 -352 813 -736 1032 -41 23 -84 45 -96 49 -11 4 -26 10 -32 15 -6 5 -65 27 -130 48 -189 62 -368 84 -584 69z m-240 -2891 c0 -6 -3 -8 -6 -4 -4 3 -13 0 -21 -8 -8 -8 -31 -15 -52 -15 -35 0 -38 2 -34 24 3 14 13 27 22 28 24 6 91 -13 91 -25z"></path> <path d="M1025 2765 c-130 -22 -240 -64 -332 -126 -79 -55 -90 -77 -50 -104 22 -14 28 -14 69 5 119 52 287 83 468 84 l95 1 3 34 c9 96 -83 135 -253 106z m175 -19 c44 -17 60 -38 60 -73 l0 -33 -119 0 c-128 0 -247 -18 -351 -53 -36 -11 -67 -22 -70 -22 -3 0 -15 -6 -28 -13 -26 -15 -42 -8 -42 18 0 33 140 113 265 154 104 33 234 43 285 22z"></path> <path d="M1815 2771 c-51 -13 -76 -31 -92 -68 -8 -20 -12 -46 -9 -59 6 -23 9 -24 114 -23 172 2 317 -23 444 -77 45 -19 63 -22 78 -14 94 50 -136 193 -377 235 -92 16 -112 17 -158 6z m233 -42 c46 -11 91 -24 100 -29 9 -5 42 -21 72 -35 30 -14 72 -38 93 -52 44 -31 50 -63 12 -63 -14 0 -25 5 -25 10 0 6 -10 10 -23 10 -13 0 -27 3 -31 7 -3 4 -12 8 -19 9 -7 1 -41 9 -77 19 -108 28 -170 36 -291 35 -125 0 -131 3 -120 50 4 17 21 33 51 48 38 19 55 22 110 17 36 -4 102 -15 148 -26z"></path> <path d="M880 2483 c-35 -13 -71 -47 -95 -87 -53 -91 -58 -238 -9 -296 l25 -29 37 19 c45 24 184 66 246 75 52 8 61 23 51 88 -17 110 -62 189 -126 223 -28 14 -100 18 -129 7z m126 -28 c45 -21 83 -85 98 -166 16 -84 11 -92 -64 -109 -30 -7 -91 -25 -135 -41 -98 -34 -110 -36 -112 -25 -1 5 -7 12 -15 17 -17 11 -19 186 -1 197 6 4 11 16 10 26 -1 10 5 21 13 24 11 3 12 2 4 -8 -15 -15 9 -65 38 -81 46 -25 120 47 101 98 -15 41 -38 60 -61 52 -12 -5 -22 -6 -22 -2 0 3 -8 0 -18 -8 -10 -8 -5 -2 11 12 33 31 103 37 153 14z m-84 -49 c26 -38 -7 -106 -51 -106 -33 0 -51 16 -51 48 0 63 71 103 102 58z"></path> <path d="M1985 2473 c-54 -29 -98 -98 -116 -184 -34 -156 59 -248 241 -237 74 4 99 18 128 73 36 68 14 221 -42 298 -44 61 -146 85 -211 50z m130 -13 c4 -6 10 -8 15 -5 10 6 92 -90 83 -98 -3 -4 -1 -13 6 -20 6 -8 8 -23 4 -32 -3 -10 -2 -16 3 -13 11 7 12 -112 1 -129 -5 -7 -5 -17 -2 -23 3 -5 1 -10 -5 -10 -6 0 -8 -5 -4 -12 5 -8 2 -9 -9 -5 -9 3 -19 1 -23 -5 -4 -7 -3 -8 4 -4 7 4 12 3 12 -2 0 -26 -99 -47 -150 -31 -19 5 -48 12 -63 14 -81 12 -118 83 -99 193 6 37 15 68 21 70 5 2 8 9 5 16 -3 7 1 18 9 25 12 9 15 4 20 -30 6 -46 19 -59 60 -59 33 0 72 38 80 76 7 40 -18 82 -48 78 -14 -1 -23 2 -19 7 7 12 91 11 99 -1z m-61 -36 c49 -49 -23 -137 -80 -99 -31 20 -31 55 1 89 27 29 56 33 79 10z"></path> <path d="M1188 2193 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"></path> <path d="M1228 2193 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"></path> <path d="M1278 2193 c6 -2 18 -2 25 0 6 3 1 5 -13 5 -14 0 -19 -2 -12 -5z"></path> <path d="M1320 2166 c0 -2 13 -6 29 -8 17 -2 28 -1 25 4 -5 8 -54 12 -54 4z"></path> <path d="M1461 2136 c4 -4 21 -11 39 -16 19 -5 29 -6 24 -1 -10 10 -72 26 -63 17z"></path> <path d="M1540 2106 c0 -2 7 -7 16 -10 8 -3 12 -2 9 4 -6 10 -25 14 -25 6z"></path> <path d="M1810 2096 c0 -2 7 -7 16 -10 8 -3 12 -2 9 4 -6 10 -25 14 -25 6z"></path> <path d="M1610 2070 c8 -5 20 -10 25 -10 6 0 3 5 -5 10 -8 5 -19 10 -25 10 -5 0 -3 -5 5 -10z"></path> <path d="M1716 2031 c-4 -6 2 -19 12 -29 11 -11 22 -26 25 -33 8 -20 39 20 35 46 -2 14 -12 21 -35 23 -17 2 -34 -1 -37 -7z m54 -27 c0 -14 -3 -14 -15 -4 -8 7 -15 14 -15 16 0 2 7 4 15 4 8 0 15 -7 15 -16z"></path> <path d="M1398 1993 c12 -2 32 -2 45 0 12 2 2 4 -23 4 -25 0 -35 -2 -22 -4z"></path> <path d="M1336 1981 c-4 -5 3 -7 14 -4 23 6 26 13 6 13 -8 0 -17 -4 -20 -9z"></path> <path d="M1496 1979 c45 -13 128 -91 153 -144 40 -85 22 -184 -45 -252 -27 -27 -55 -44 -78 -48 -32 -7 -52 -25 -26 -25 21 0 93 42 118 68 61 65 80 177 43 257 -32 72 -127 156 -173 154 -19 -1 -17 -3 8 -10z"></path> <path d="M1264 1936 c-29 -24 -46 -50 -57 -87 -10 -29 -15 -54 -13 -57 3 -2 10 16 16 39 8 31 27 58 61 92 57 54 52 63 -7 13z"></path> <path d="M1839 1953 c-13 -16 -12 -17 4 -4 9 7 17 15 17 17 0 8 -8 3 -21 -13z"></path> <path d="M1794 1887 c-3 -9 -4 -24 -2 -34 3 -16 5 -15 17 6 9 16 10 26 2 34 -7 7 -12 6 -17 -6z"></path> <path d="M812 1860 c-64 -15 -138 -81 -163 -147 -16 -42 -28 -113 -18 -107 5 3 9 17 9 32 1 35 30 98 65 140 40 48 94 72 162 73 42 0 52 3 38 9 -24 10 -49 10 -93 0z"></path> <path d="M930 1851 c0 -5 10 -11 23 -15 31 -7 90 -65 110 -109 22 -45 22 -155 2 -205 -28 -65 -119 -141 -172 -143 -26 0 -26 -1 -6 -9 24 -10 65 -2 57 11 -3 5 4 9 16 9 12 0 18 5 15 10 -3 6 0 10 8 10 15 0 62 54 90 103 12 23 17 54 17 107 0 89 -20 140 -74 188 -37 34 -86 58 -86 43z"></path> <path d="M1381 1814 c-25 -20 -31 -34 -31 -64 0 -30 6 -44 31 -64 50 -42 105 -32 135 25 20 39 11 82 -23 109 -35 27 -75 25 -112 -6z m54 -28 c0 -27 -29 -43 -49 -27 -12 10 -13 18 -5 33 13 25 54 21 54 -6z m53 2 c17 -17 15 -58 -5 -80 -20 -22 -66 -24 -83 -3 -11 13 -8 20 4 13 10 -6 56 47 56 64 0 21 11 23 28 6z"></path> <path d="M1201 1736 c-1 -32 44 -122 74 -149 44 -39 102 -65 155 -71 l55 -6 -60 15 c-32 9 -78 26 -101 40 -47 28 -99 101 -113 160 -8 35 -9 36 -10 11z"></path> <path d="M1812 1750 c0 -8 4 -26 8 -40 6 -20 8 -21 8 -5 0 11 -3 29 -8 40 -5 12 -8 14 -8 5z"></path> <path d="M412 1708 c-18 -18 -15 -46 7 -58 29 -15 36 -13 37 13 0 12 2 29 5 37 5 19 -32 25 -49 8z m24 -35 c-10 -10 -19 5 -10 18 6 11 8 11 12 0 2 -7 1 -15 -2 -18z"></path> <path d="M818 1685 c-54 -30 -57 -113 -6 -149 88 -62 185 58 109 135 -32 32 -62 36 -103 14z m86 -20 c8 -22 -4 -45 -24 -45 -23 0 -42 24 -34 44 8 20 50 21 58 1z m-34 -68 c11 -3 23 -1 26 4 9 16 24 10 24 -11 0 -38 -68 -54 -102 -23 -17 15 -25 63 -12 76 4 3 15 -4 25 -17 10 -13 28 -26 39 -29z"></path> <path d="M1832 1660 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"></path> <path d="M629 1548 c20 -87 110 -179 173 -178 17 1 13 4 -15 14 -78 28 -147 110 -147 174 0 12 -4 22 -9 22 -5 0 -6 -15 -2 -32z"></path> <path d="M1853 1545 c0 -22 2 -30 4 -17 2 12 2 30 0 40 -3 9 -5 -1 -4 -23z"></path> <path d="M1149 1489 c-13 -13 -19 -30 -17 -47 3 -23 8 -27 40 -30 43 -4 106 20 115 44 18 46 -97 74 -138 33z m101 -19 c11 -7 9 -11 -13 -19 -40 -16 -77 -14 -77 3 0 22 62 34 90 16z"></path> <path d="M1331 1468 c37 -34 41 -53 16 -76 -15 -14 -40 -21 -82 -24 -33 -2 -75 -12 -94 -21 -40 -20 -61 -22 -61 -4 0 8 -4 7 -10 -3 -15 -24 38 -29 80 -8 19 10 55 18 80 18 32 0 56 7 83 25 51 36 49 74 -7 101 l-31 16 26 -24z"></path> <path d="M2613 1445 c0 -8 4 -12 9 -9 5 3 6 10 3 15 -9 13 -12 11 -12 -6z"></path> <path d="M1075 1430 c-3 -6 1 -13 9 -16 9 -3 16 -16 17 -28 0 -11 3 -15 6 -8 3 7 1 20 -3 30 -4 9 -6 20 -6 25 3 11 -16 9 -23 -3z"></path> <path d="M1018 1403 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"></path> <path d="M1882 1390 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"></path> <path d="M1911 1384 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"></path> <path d="M568 1363 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"></path> <path d="M2557 1353 c-4 -3 -7 -11 -7 -17 0 -6 5 -5 12 2 6 6 9 14 7 17 -3 3 -9 2 -12 -2z"></path> <path d="M788 1343 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"></path> <path d="M1321 1309 c-1 -32 -17 -47 -60 -55 -19 -4 -28 -10 -21 -14 6 -4 27 0 46 9 34 15 51 46 41 73 -3 7 -6 1 -6 -13z"></path> <path d="M1901 1314 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"></path> <path d="M1155 1270 c2 -14 5 -28 5 -31 0 -4 12 -9 26 -12 l26 -5 -25 22 c-14 11 -28 28 -31 36 -3 8 -4 4 -1 -10z"></path> <path d="M2517 1283 c-4 -3 -7 -11 -7 -17 0 -6 5 -5 12 2 6 6 9 14 7 17 -3 3 -9 2 -12 -2z"></path> <path d="M2489 1233 c-13 -16 -12 -17 4 -4 16 13 21 21 13 21 -2 0 -10 -8 -17 -17z"></path> <path d="M2427 1152 c-15 -15 -27 -32 -27 -38 0 -5 14 6 30 25 28 32 34 41 27 41 -2 0 -15 -13 -30 -28z"></path> <path d="M2375 1100 c-3 -5 -1 -10 4 -10 6 0 11 5 11 10 0 6 -2 10 -4 10 -3 0 -8 -4 -11 -10z"></path> <path d="M1970 1071 c-13 -25 -13 -41 0 -41 6 0 9 3 9 8 -7 43 26 42 48 -2 9 -19 13 -41 10 -50 -8 -21 -43 -20 -56 2 -6 9 -10 13 -11 7 0 -18 15 -33 35 -35 45 -5 48 -2 42 45 -7 70 -53 109 -77 66z"></path> <path d="M2325 1054 c-19 -15 -22 -21 -9 -15 18 9 52 41 43 41 -2 0 -17 -12 -34 -26z"></path> <path d="M2242 1009 c-23 -11 -75 -29 -115 -39 -40 -10 -63 -19 -52 -19 44 -2 215 58 215 74 0 6 4 7 -48 -16z"></path> <path d="M1768 998 c5 -5 16 -8 23 -6 8 3 3 7 -10 11 -17 4 -21 3 -13 -5z"></path> <path d="M1918 963 c6 -2 18 -2 25 0 6 3 1 5 -13 5 -14 0 -19 -2 -12 -5z"></path> <path d="M1327 917 l-17 -32 20 24 c17 20 26 41 18 41 -2 0 -11 -15 -21 -33z"></path> <path d="M1630 865 c13 -14 26 -25 28 -25 3 0 -5 11 -18 25 -13 14 -26 25 -28 25 -3 0 5 -11 18 -25z"></path> <path d="M1295 869 c-4 -6 -5 -12 -2 -15 2 -3 7 2 10 11 7 17 1 20 -8 4z"></path> <path d="M1235 840 c-3 -6 1 -7 9 -4 18 7 21 14 7 14 -6 0 -13 -4 -16 -10z"></path> <path d="M1240 812 c-73 -60 -159 -101 -270 -128 l-55 -14 48 5 c67 7 192 60 260 112 50 39 65 53 54 53 -1 0 -18 -13 -37 -28z"></path> <path d="M1670 835 c0 -3 12 -11 28 -17 l27 -11 -44 -8 c-24 -5 -47 -11 -50 -15 -3 -3 14 -3 39 2 25 4 55 7 68 7 30 -1 28 2 -18 26 -43 22 -50 24 -50 16z"></path> <path d="M1588 773 c6 -2 18 -2 25 0 6 3 1 5 -13 5 -14 0 -19 -2 -12 -5z"></path> <path d="M760 350 c0 -5 5 -10 11 -10 5 0 7 5 4 10 -3 6 -8 10 -11 10 -2 0 -4 -4 -4 -10z"></path> <path d="M1755 220 c-13 -5 -14 -9 -5 -9 8 0 24 4 35 9 13 5 14 9 5 9 -8 0 -24 -4 -35 -9z"></path> <path d="M1625 170 c-3 -5 1 -10 10 -10 9 0 13 5 10 10 -3 6 -8 10 -10 10 -2 0 -7 -4 -10 -10z"></path> <path d="M1348 133 c12 -2 30 -2 40 0 9 3 -1 5 -23 4 -22 0 -30 -2 -17 -4z"></path> <path d="M1243 123 c9 -2 25 -2 35 0 9 3 1 5 -18 5 -19 0 -27 -2 -17 -5z"></path> <path d="M1378 113 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"></path> </g> </svg> <a title="GopherLabs Community 
+" href="/">GopherLabs</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/test/">Home</a></li><li class="navigation__item"><a href="/docs/en/hello-world">Docs</a></li><li class="navigation__item"><a href="/about.html">About</a></li><li class="navigation__item"><a href="https://github.com/sangam14/GopherLabs">GitHub</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/WebPage"><div class="article__header"><header><h1>Articles - Brief (Info)</h1></header></div><meta itemprop="headline" content="Articles - Brief (Info)"><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2021-07-04T08:34:04+05:30"><div class="js-article-content"><div class="layout--articles"><div class="article-list items"><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/single.html">Page - Single</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/aside.html">Page - Aside</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/sidebar.html">Page - Sidebar</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/sidebar-aside.html">Page - Sidebar (Aside)</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-overlay-background-fill.html">Page - Article Header Overlay Background Fill</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-overlay-background-image.html">Page - Article Header Overlay Background Image</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-cover-image.html">Page - Article Header Image</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-overlay-background-image-header-background.html">Page - Article Header Overlay Background Image (Customized Header Background)</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-cover-image-header-background.html">Page - Article Header Image (Customized Header Background)</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-overlay-background-fill-immersive-translucent-header.html">Page - Article Header Overlay Background Fill (Immersive + Translucent Header)</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-overlay-background-image-immersive-translucent-header.html">Page - Article Header Overlay Background Image (Immersive + Translucent Header)</a></div>
+      </li><li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="">
+        <div class="item__content"><span class="item__meta">Jul 04</span><a itemprop="headline" class="item__header" href="/page/article-header-cover-image-immersive-translucent-header.html">Page - Article Header Image (Immersive + Translucent Header)</a></div>
+      </li></div>
+</div><div class="article__content">
+
+  <hr />
+
+  <p>Brief article list with info.</p>
+
+  <!--more-->
+
+  <p><strong>front matter:</strong></p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: articles
+title: Articles - Brief (Info)
+articles:
+  data_source: site.sample_page
+  type: brief
+  show_info: true
+---
+</code></pre></div>  </div>
+
+</div>
+
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content=""><meta itemprop="url" content="/"><meta itemprop="description" content="RustLabs Community 
+"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><li title="Follow us on Twitter.">
+        <a class="button button--circle twitter-button" itemprop="sameAs" href="https://twitter.com/kubedaily" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1024.032 194.432c-37.664 16.704-78.176 28-120.672 33.088 43.36-26.016 76.672-67.168 92.384-116.224-40.608 24.064-85.568 41.568-133.408 50.976-38.336-40.832-92.928-66.336-153.344-66.336-116.032 0-210.08 94.048-210.08 210.08 0 16.48 1.856 32.512 5.44 47.872-174.592-8.768-329.408-92.416-433.024-219.52-18.08 31.04-28.448 67.104-28.448 105.632 0 72.896 37.088 137.184 93.472 174.88-34.432-1.088-66.816-10.528-95.168-26.272-0.032 0.864-0.032 1.76-0.032 2.656 0 101.792 72.416 186.688 168.512 205.984-17.632 4.8-36.192 7.36-55.36 7.36-13.536 0-26.688-1.312-39.52-3.776 26.72 83.456 104.32 144.192 196.256 145.888-71.904 56.352-162.496 89.92-260.928 89.92-16.96 0-33.664-0.992-50.112-2.944 92.96 59.616 203.392 94.4 322.048 94.4 386.432 0 597.728-320.128 597.728-597.76 0-9.12-0.192-18.176-0.608-27.168 41.056-29.632 76.672-66.624 104.832-108.736z" />
+</svg>
+</div>
+        </a>
+      </li><li title="Follow us on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/sangam14" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© GopherLabs 2021,
+        Powered by <a title="Kubedaily" href="http://discord.kubedaily.live/">Kubedaily</a> & <a
+        title="Made In India." href="https://github.com/sangam14">Sangam Biradar</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">Search</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        Cancel</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA || {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'], function() {
+    var $canvas = null, $this = null, _ctx = null, _text = '';
+    $('.language-chart').each(function(){
+      $this = $(this);
+      $canvas = $('<canvas></canvas>');
+      _text = $this.text();
+      $this.text('').append($canvas);
+      _ctx = $canvas.get(0).getContext('2d');
+      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};_config.TeX = { equationNumbers: { autoNumber: "all" } };MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  window.Lazyload.js('https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js', function() {
+    mermaid.initialize({
+      startOnLoad: true
+    });
+    mermaid.init(undefined, '.language-mermaid');
+  });
+</script>
+
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>
+
