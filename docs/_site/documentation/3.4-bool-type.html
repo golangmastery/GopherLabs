@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous"> -->
+    <title>Bool Type</title>
+    <meta name="description" content="Bool Type It’s always good to take a look at the language specification and to become familiar and acquainted with the terminology used to talk about a progr...">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="canonical" href="http://localhost:4000/documentation/3.4-bool-type.html">
+    <link rel="alternate" type="application/rss+xml" title="Gopherlabs - The Ultimate Workshop for Golang Developers" href="/feed.xml">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans|Fira+Mono" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+
+    
+
+<!-- 
+                           888                       
+                           888                       
+                           888                       
+88888b.   8888b.  888  888 88888b.   8888b.  888d888 
+888 "88b     "88b 888  888 888 "88b     "88b 888P"   
+888  888 .d888888 Y88  88P 888  888 .d888888 888     
+888  888 888  888  Y8bd8P  888 d88P 888  888 888     
+888  888 "Y888888   Y88P   88888P"  "Y888888 888
+-->
+
+  <!-- navbar-expand-lg -->
+
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-light">
+
+      
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <a class="navbar-brand" href="/"><code>Gopherlabs Powered By KubeDaily Community</code></a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              
+              
+            <a class="dropdown-item" href="/documentation/6.5-aligning-text-with-tabwriter.html">Aligning text with tabwriter</a>
+            
+            <a class="dropdown-item" href="/documentation/3.4-bool-type.html">Bool Type</a>
+            
+            <a class="dropdown-item" href="/documentation/10.2-Changing-file-permissions.html">Changing file permissions</a>
+            
+            <a class="dropdown-item" href="/documentation/4.8-command-line-arguments-file-io.html">Command Line Arguments and File I/O</a>
+            
+            <a class="dropdown-item" href="/documentation/6.4-concatenating-a-string-with-writer.html">Concatenating a string with writer</a>
+            
+            <a class="dropdown-item" href="/documentation/2.7-conditional-if-statement.html">Conditional - If Statement</a>
+            
+            <a class="dropdown-item" href="/documentation/2.8-conditional-if-else-if-Else.html">Conditional - If, Else if, Else</a>
+            
+            <a class="dropdown-item" href="/documentation/3.0-switch-statement.html">Conditional - Switch Statement</a>
+            
+            <a class="dropdown-item" href="/documentation/3.1-switch-statement-doc.html">Conditional - Switch Statement Documentation</a>
+            
+            <a class="dropdown-item" href="/documentation/3.2-conditional-logic-operators.html">Conditional Logic Operators</a>
+            
+            <a class="dropdown-item" href="/documentation/4.4-conversion-between-array-slice.html">Conversion between array and slice</a>
+            
+            <a class="dropdown-item" href="/documentation/3.8-conversion-not-casting.html">Conversion, Not Casting</a>
+            
+            <a class="dropdown-item" href="/documentation/7.7-Converting-binary-octal-decimal-hexadecimal.html">Converting between binary, octal, decimal, and hexadecimal</a>
+            
+            <a class="dropdown-item" href="/documentation/3.9-creating-own-type.html">Creating Your Own Type</a>
+            
+            <a class="dropdown-item" href="/documentation/5.2-program-interface-with-flag.html">Creating a program interface with the flag package</a>
+            
+            <a class="dropdown-item" href="/documentation/10.3-Creating-files-and-dir.html">Creating files and directories</a>
+            
+            <a class="dropdown-item" href="/documentation/2.0-deep-drive-on-constants.html">Deep Drive On Constants</a>
+            
+            <a class="dropdown-item" href="/documentation/1.9-deep-drive-on-variables.html">Deep Drive on Variables</a>
+            
+            <a class="dropdown-item" href="/documentation/4.0-Defer.html">Defer</a>
+            
+            <a class="dropdown-item" href="/documentation/10.4-filtering-file-listings.html">Filtering file listings</a>
+            
+            <a class="dropdown-item" href="/documentation/6.1-finding-the-substring-in-a-string.html">Finding the substring in a string</a>
+            
+            <a class="dropdown-item" href="/documentation/2.5-random-number-math-crypto.html">Generate Random number with math/crypto/rand in Go</a>
+            
+            <a class="dropdown-item" href="/documentation/5.4-getting-the-current-process-pid.html">Getting the current process PID</a>
+            
+            <a class="dropdown-item" href="/documentation/5.5-handling-operating-system-signals.html">Handling operating system signals</a>
+            
+            <a class="dropdown-item" href="/documentation/6.3-joining-the-string-slice-with-a-separator.html">Joining the string slice with a separator</a>
+            
+            <a class="dropdown-item" href="/documentation/1.1-hello-world.html">Lets Start With First Hello world Program</a>
+            
+            <a class="dropdown-item" href="/documentation/2.1-loop-init-condition-post.html">Loop  Init, Condition, Post</a>
+            
+            <a class="dropdown-item" href="/documentation/2.4-break-continue.html">Loop - Break & Continue</a>
+            
+            <a class="dropdown-item" href="/documentation/2.3-loop-for-statement.html">Loop - For Statement</a>
+            
+            <a class="dropdown-item" href="/documentation/2.2-loop-nested-loops.html">Loop - Nested Loops</a>
+            
+            <a class="dropdown-item" href="/documentation/2.6-loop-printing-ASCII.html">Loop - Printing ASCII</a>
+            
+            <a class="dropdown-item" href="/documentation/2.9-loop-conditional-modulus.html">Loop, Conditional, Modulus</a>
+            
+            <a class="dropdown-item" href="/documentation/1.3-numeral-system-binary.html">Numeral Systems -  Binary</a>
+            
+            <a class="dropdown-item" href="/documentation/1.2-numeral-system-decimal.html">Numeral Systems - Decimal</a>
+            
+            <a class="dropdown-item" href="/documentation/1.5-numeral-system-loop.html">Numeral Systems - Loop</a>
+            
+            <a class="dropdown-item" href="/documentation/1.6-numeral-systems-UTF-8.html">Numeral Systems UTF-8</a>
+            
+            <a class="dropdown-item" href="/documentation/1.4-numeral-system-hexadecimal.html">Numeral systems -  hexadecimal</a>
+            
+            <a class="dropdown-item" href="/documentation/9.5-parsing-large-xml-file-effectively.html">Parsing a large XML file effectively</a>
+            
+            <a class="dropdown-item" href="/documentation/4.2-pointer.html">Pointer</a>
+            
+            <a class="dropdown-item" href="/documentation/3.7-ponter-to-struct.html">Pointer to struct</a>
+            
+            <a class="dropdown-item" href="/documentation/4.3-prefix-suffix.html">Prefix Suffix</a>
+            
+            <a class="dropdown-item" href="/documentation/8.8-reading-writing-different-charset.html">Reading writing a different charset</a>
+            
+            <a class="dropdown-item" href="/documentation/5.8-reading-writing-from-the-child-process.html">Reading writing from the child process</a>
+            
+            <a class="dropdown-item" href="/documentation/6.6-replacing-part-of-the-string.html">Replacing part of the string</a>
+            
+            <a class="dropdown-item" href="/documentation/10.6-resolve-the-user-home-directory.html">Resolving the user home directory</a>
+            
+            <a class="dropdown-item" href="/documentation/5.7-retrieving-child-process-information.html">Retrieving child process information</a>
+            
+            <a class="dropdown-item" href="/documentation/5.0-retriving-go-version.html">Retrieving the Golang version</a>
+            
+            <a class="dropdown-item" href="/documentation/5.3-retrieving-current-working-directory.html">Retrieving the current working directory</a>
+            
+            <a class="dropdown-item" href="/documentation/8.9-seeking-position-within-file.html">Seeking a position within a file</a>
+            
+            <a class="dropdown-item" href="/documentation/1.7-short-variable-declarations.html">Short variable declarations</a>
+            
+            <a class="dropdown-item" href="/documentation/5.9-shutting-down-the-application-gracefully.html">Shutting down the application gracefully</a>
+            
+            <a class="dropdown-item" href="/documentation/4.1-stacking-defers.html">Stacking defers</a>
+            
+            <a class="dropdown-item" href="/documentation/3.3-string-type.html">String Type</a>
+            
+            <a class="dropdown-item" href="/documentation/3.6-struct-literal.html">Struct Literal</a>
+            
+            <a class="dropdown-item" href="/documentation/3.5-structs.html">Structs</a>
+            
+            <a class="dropdown-item" href="/documentation/readme.html">Ultimate Gopherlabs</a>
+            
+            <a class="dropdown-item" href="/documentation/1.8-variable-with-zero-value.html">Variable with zero value</a>
+            
+            <a class="dropdown-item" href="/documentation/8.5-writing-standard-output-error.html">Writing standard output and error</a>
+            
+            <a class="dropdown-item" href="/documentation/5.1-accessing-program-arguments.html">accessing program arguments</a>
+            
+            <a class="dropdown-item" href="/documentation/6.2-breaking-the-string-into-words.html">breaking the string into words</a>
+            
+            <a class="dropdown-item" href="/documentation/5.6-calling_external_process.html">calling an external proces</a>
+            
+            <a class="dropdown-item" href="/documentation/7.3-comparing-floating-point-numbers.html">comparing floating-point numbers</a>
+            
+            <a class="dropdown-item" href="/documentation/10.5-comparing-two-files.html">comparing two files</a>
+            
+            <a class="dropdown-item" href="/documentation/6.8-controlling-case.html">controlling case</a>
+            
+            <a class="dropdown-item" href="/documentation/8.1-converting-between-degrees-radians.html">converting between degrees and radians</a>
+            
+            <a class="dropdown-item" href="/documentation/7.2-converting-strings-to-numbers.html">converting strings to numbers</a>
+            
+            <a class="dropdown-item" href="/documentation/9.8-creating-temporary-files.html">creating temporary files</a>
+            
+            <a class="dropdown-item" href="/documentation/9.6-extracting-data-JSON-array.html">extracting data from an incomplete JSON array</a>
+            
+            <a class="dropdown-item" href="/documentation/6.0-file-configuration-with-functional-options.html">file configuration with functional options</a>
+            
+            <a class="dropdown-item" href="/documentation/6.7-finding-the-substring-in-text-by-the-regex-pattern.html">finding the substring in text by the regex pattern</a>
+            
+            <a class="dropdown-item" href="/documentation/7.5-floating-point-arithmetics.html">floating-point arithmetics</a>
+            
+            <a class="dropdown-item" href="/documentation/7.6-formatting-numbers.html">formatting numbers</a>
+            
+            <a class="dropdown-item" href="/documentation/7.8-formatting-with-the-correct-plurals.html">formatting with the correct plurals</a>
+            
+            <a class="dropdown-item" href="/documentation/8.3-generating-checksums.html">generating checksums</a>
+            
+            <a class="dropdown-item" href="/documentation/7.9-generating-random-numbers.html">generating random numbers</a>
+            
+            <a class="dropdown-item" href="/documentation/9.7-getting-file-information.html">getting file information</a>
+            
+            <a class="dropdown-item" href="/documentation/7.1-indenting-a-text-document.html">indenting a text document</a>
+            
+            <a class="dropdown-item" href="/documentation/4.7-init-function.html">init Function</a>
+            
+            <a class="dropdown-item" href="/documentation/10.1-listing-directory.html">listing a directory</a>
+            
+            <a class="dropdown-item" href="/documentation/7.0-managing-whitespace-in-a-string.html">managing whitespace in a string</a>
+            
+            <a class="dropdown-item" href="/documentation/4.5-methods.html">methods</a>
+            
+            <a class="dropdown-item" href="/documentation/8.6-opening-a-file-by-name.html">opening a file by name</a>
+            
+            <a class="dropdown-item" href="/documentation/8.0-operating-complex-numbers.html">operating complex numbers</a>
+            
+            <a class="dropdown-item" href="/documentation/6.9-parsing-comma-separated-data.html">parsing comma-separated data</a>
+            
+            <a class="dropdown-item" href="/documentation/9.2-piping-between-writer-reader.html">piping between writer and reader</a>
+            
+            <a class="dropdown-item" href="/documentation/9.4-reading-writing-zip-files.html">reading and writing ZIP files</a>
+            
+            <a class="dropdown-item" href="/documentation/9.0-reading-writing-binary-data.html">reading and writing binary data</a>
+            
+            <a class="dropdown-item" href="/documentation/8.4-reading-standard-input.html">reading standard input</a>
+            
+            <a class="dropdown-item" href="/documentation/8.7-reading-the-file-into-string.html">reading the file into a string</a>
+            
+            <a class="dropdown-item" href="/documentation/7.4-rounding-floating-point-numbers.html">rounding floating-point numbers</a>
+            
+            <a class="dropdown-item" href="/documentation/9.3-serializing-objects-binary-format.html">serializing objects to binary format</a>
+            
+            <a class="dropdown-item" href="/documentation/8.2-taking-logarithms.html">taking logarithms</a>
+            
+            <a class="dropdown-item" href="/documentation/4.6-variadic-function.html">variadic function</a>
+            
+            <a class="dropdown-item" href="/documentation/4.9-interface.html">what is interface ?</a>
+            
+            <a class="dropdown-item" href="/documentation/9.9-writing-the-file.html">writing the file</a>
+            
+            <a class="dropdown-item" href="/documentation/10.0-writing-the-file-from-multiple-goroutines.html">writing the file from multiple goroutines</a>
+            
+            <a class="dropdown-item" href="/documentation/9.1-writing-multiple-writers-at-once.html">writing to multiple writers at once</a>
+            
+          </div>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/#core">Core Values</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#different">Differential</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/#friends">Team & Updates</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/documentation/readme.html">Documentation</a>
+            </li>
+      </ul>
+
+     
+
+      <a class="nav-link px-1" href="https://twitter.com/kubedaily"><i aria-hidden="true" class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+      <a class="nav-link px-1" href="https://github.com/sangam14/GopherLabs"><i aria-hidden="true" class="fa fa-github"></i></a>&nbsp;&nbsp;
+      <button onclick="location.href='https://discord.gg/S3GtFvT'" type="button">
+        Join Our Community on Discord</button>      <!--<a class="nav-link px-1" href=""><i aria-hidden="true" class="fa fa-stack-overflow"></i></a>&nbsp;&nbsp;
+      <a class="nav-link px-1" href=""><i aria-hidden="true" class="fa fa-envelope"></i></a>&nbsp;&nbsp; -->
+      
+    </div>
+  </nav>
+
+  <div class="container">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+
+<!--
+         d8b      888          888
+         Y8P      888          888
+                  888          888
+.d8888b  888  .d88888  .d88b.  88888b.   8888b.  888d888
+88K      888 d88" 888 d8P  Y8b 888 "88b     "88b 888P"
+"Y8888b. 888 888  888 88888888 888  888 .d888888 888
+     X88 888 Y88b 888 Y8b.     888 d88P 888  888 888
+ 88888P' 888  "Y88888  "Y8888  88888P"  "Y888888 888
+-->
+<div class="row">
+    <div class="col-sm-4 mb-5">
+        <h5 class="mb-3">Documentation</h5>
+        
+
+   
+
+        <div class="sidebar mb-2 mt-4">
+            <h6 class="mb-3">Golang 101</h6>
+            
+             
+            <a href="/documentation/readme.html">
+                <p class="mb-2">0 - Ultimate Gopherlabs</p>
+            </a>
+              
+            <a href="/documentation/1.1-hello-world.html">
+                <p class="mb-2">1 - Lets Start With First Hello world Program</p>
+            </a>
+              
+            <a href="/documentation/1.2-numeral-system-decimal.html">
+                <p class="mb-2">2 - Numeral Systems - Decimal</p>
+            </a>
+              
+            <a href="/documentation/1.3-numeral-system-binary.html">
+                <p class="mb-2">3 - Numeral Systems -  Binary</p>
+            </a>
+              
+            <a href="/documentation/1.4-numeral-system-hexadecimal.html">
+                <p class="mb-2">4 - Numeral systems -  hexadecimal</p>
+            </a>
+              
+            <a href="/documentation/1.5-numeral-system-loop.html">
+                <p class="mb-2">5 - Numeral Systems - Loop</p>
+            </a>
+              
+            <a href="/documentation/1.6-numeral-systems-UTF-8.html">
+                <p class="mb-2">6 - Numeral Systems UTF-8</p>
+            </a>
+              
+            <a href="/documentation/1.7-short-variable-declarations.html">
+                <p class="mb-2">7 - Short variable declarations</p>
+            </a>
+              
+            <a href="/documentation/1.8-variable-with-zero-value.html">
+                <p class="mb-2">8 - Variable with zero value</p>
+            </a>
+              
+            <a href="/documentation/1.9-deep-drive-on-variables.html">
+                <p class="mb-2">9 - Deep Drive on Variables</p>
+            </a>
+              
+            <a href="/documentation/2.0-deep-drive-on-constants.html">
+                <p class="mb-2">10 - Deep Drive On Constants</p>
+            </a>
+              
+            <a href="/documentation/2.1-loop-init-condition-post.html">
+                <p class="mb-2">11 - Loop  Init, Condition, Post</p>
+            </a>
+              
+            <a href="/documentation/2.2-loop-nested-loops.html">
+                <p class="mb-2">12 - Loop - Nested Loops</p>
+            </a>
+              
+            <a href="/documentation/2.3-loop-for-statement.html">
+                <p class="mb-2">13 - Loop - For Statement</p>
+            </a>
+              
+            <a href="/documentation/2.4-break-continue.html">
+                <p class="mb-2">14 - Loop - Break & Continue</p>
+            </a>
+              
+            <a href="/documentation/2.5-random-number-math-crypto.html">
+                <p class="mb-2">15 - Generate Random number with math/crypto/rand in Go</p>
+            </a>
+              
+            <a href="/documentation/2.6-loop-printing-ASCII.html">
+                <p class="mb-2">16 - Loop - Printing ASCII</p>
+            </a>
+              
+            <a href="/documentation/2.7-conditional-if-statement.html">
+                <p class="mb-2">17 - Conditional - If Statement</p>
+            </a>
+              
+            <a href="/documentation/2.8-conditional-if-else-if-Else.html">
+                <p class="mb-2">18 - Conditional - If, Else if, Else</p>
+            </a>
+              
+            <a href="/documentation/2.9-loop-conditional-modulus.html">
+                <p class="mb-2">19 - Loop, Conditional, Modulus</p>
+            </a>
+              
+            <a href="/documentation/3.0-switch-statement.html">
+                <p class="mb-2">20 - Conditional - Switch Statement</p>
+            </a>
+              
+            <a href="/documentation/3.1-switch-statement-doc.html">
+                <p class="mb-2">21 - Conditional - Switch Statement Documentation</p>
+            </a>
+              
+            <a href="/documentation/3.2-conditional-logic-operators.html">
+                <p class="mb-2">22 - Conditional Logic Operators</p>
+            </a>
+              
+            <a href="/documentation/3.3-string-type.html">
+                <p class="mb-2">23 - String Type</p>
+            </a>
+              
+            <a href="/documentation/3.4-bool-type.html">
+                <p class="mb-2">24 - Bool Type</p>
+            </a>
+              
+            <a href="/documentation/3.5-structs.html">
+                <p class="mb-2">25 - Structs</p>
+            </a>
+              
+            <a href="/documentation/3.6-struct-literal.html">
+                <p class="mb-2">26 - Struct Literal</p>
+            </a>
+              
+            <a href="/documentation/3.7-ponter-to-struct.html">
+                <p class="mb-2">27 - Pointer to struct</p>
+            </a>
+              
+            <a href="/documentation/3.8-conversion-not-casting.html">
+                <p class="mb-2">28 - Conversion, Not Casting</p>
+            </a>
+              
+            <a href="/documentation/3.9-creating-own-type.html">
+                <p class="mb-2">29 - Creating Your Own Type</p>
+            </a>
+              
+            <a href="/documentation/4.0-Defer.html">
+                <p class="mb-2">30 - Defer</p>
+            </a>
+              
+            <a href="/documentation/4.1-stacking-defers.html">
+                <p class="mb-2">31 - Stacking defers</p>
+            </a>
+              
+            <a href="/documentation/4.2-pointer.html">
+                <p class="mb-2">32 - Pointer</p>
+            </a>
+              
+            <a href="/documentation/4.3-prefix-suffix.html">
+                <p class="mb-2">33 - Prefix Suffix</p>
+            </a>
+              
+            <a href="/documentation/4.4-conversion-between-array-slice.html">
+                <p class="mb-2">34 - Conversion between array and slice</p>
+            </a>
+              
+            <a href="/documentation/4.5-methods.html">
+                <p class="mb-2">35 - methods</p>
+            </a>
+              
+            <a href="/documentation/4.6-variadic-function.html">
+                <p class="mb-2">36 - variadic function</p>
+            </a>
+              
+            <a href="/documentation/4.7-init-function.html">
+                <p class="mb-2">37 - init Function</p>
+            </a>
+              
+            <a href="/documentation/4.8-command-line-arguments-file-io.html">
+                <p class="mb-2">38 - Command Line Arguments and File I/O</p>
+            </a>
+              
+            <a href="/documentation/4.9-interface.html">
+                <p class="mb-2">39 - what is interface ?</p>
+            </a>
+              
+            <a href="/documentation/5.0-retriving-go-version.html">
+                <p class="mb-2">40 - Retrieving the Golang version</p>
+            </a>
+              
+            <a href="/documentation/5.1-accessing-program-arguments.html">
+                <p class="mb-2">41 - accessing program arguments</p>
+            </a>
+              
+            <a href="/documentation/5.2-program-interface-with-flag.html">
+                <p class="mb-2">42 - Creating a program interface with the flag package</p>
+            </a>
+              
+            <a href="/documentation/5.3-retrieving-current-working-directory.html">
+                <p class="mb-2">43 - Retrieving the current working directory</p>
+            </a>
+              
+            <a href="/documentation/5.4-getting-the-current-process-pid.html">
+                <p class="mb-2">44 - Getting the current process PID</p>
+            </a>
+              
+            <a href="/documentation/5.5-handling-operating-system-signals.html">
+                <p class="mb-2">45 - Handling operating system signals</p>
+            </a>
+              
+            <a href="/documentation/5.6-calling_external_process.html">
+                <p class="mb-2">46 - calling an external proces</p>
+            </a>
+              
+            <a href="/documentation/5.7-retrieving-child-process-information.html">
+                <p class="mb-2">47 - Retrieving child process information</p>
+            </a>
+              
+            <a href="/documentation/5.8-reading-writing-from-the-child-process.html">
+                <p class="mb-2">48 - Reading writing from the child process</p>
+            </a>
+              
+            <a href="/documentation/5.9-shutting-down-the-application-gracefully.html">
+                <p class="mb-2">49 - Shutting down the application gracefully</p>
+            </a>
+              
+            <a href="/documentation/6.0-file-configuration-with-functional-options.html">
+                <p class="mb-2">50 - file configuration with functional options</p>
+            </a>
+              
+            <a href="/documentation/6.1-finding-the-substring-in-a-string.html">
+                <p class="mb-2">51 - Finding the substring in a string</p>
+            </a>
+              
+            <a href="/documentation/6.2-breaking-the-string-into-words.html">
+                <p class="mb-2">52 - breaking the string into words</p>
+            </a>
+              
+            <a href="/documentation/6.3-joining-the-string-slice-with-a-separator.html">
+                <p class="mb-2">53 - Joining the string slice with a separator</p>
+            </a>
+              
+            <a href="/documentation/6.4-concatenating-a-string-with-writer.html">
+                <p class="mb-2">54 - Concatenating a string with writer</p>
+            </a>
+              
+            <a href="/documentation/6.5-aligning-text-with-tabwriter.html">
+                <p class="mb-2">55 - Aligning text with tabwriter</p>
+            </a>
+              
+            <a href="/documentation/6.6-replacing-part-of-the-string.html">
+                <p class="mb-2">56 - Replacing part of the string</p>
+            </a>
+              
+            <a href="/documentation/6.7-finding-the-substring-in-text-by-the-regex-pattern.html">
+                <p class="mb-2">57 - finding the substring in text by the regex pattern</p>
+            </a>
+              
+            <a href="/documentation/6.8-controlling-case.html">
+                <p class="mb-2">58 - controlling case</p>
+            </a>
+              
+            <a href="/documentation/6.9-parsing-comma-separated-data.html">
+                <p class="mb-2">59 - parsing comma-separated data</p>
+            </a>
+              
+            <a href="/documentation/7.0-managing-whitespace-in-a-string.html">
+                <p class="mb-2">60 - managing whitespace in a string</p>
+            </a>
+              
+            <a href="/documentation/7.1-indenting-a-text-document.html">
+                <p class="mb-2">61 - indenting a text document</p>
+            </a>
+              
+            <a href="/documentation/7.2-converting-strings-to-numbers.html">
+                <p class="mb-2">62 - converting strings to numbers</p>
+            </a>
+              
+            <a href="/documentation/7.3-comparing-floating-point-numbers.html">
+                <p class="mb-2">63 - comparing floating-point numbers</p>
+            </a>
+              
+            <a href="/documentation/7.4-rounding-floating-point-numbers.html">
+                <p class="mb-2">64 - rounding floating-point numbers</p>
+            </a>
+              
+            <a href="/documentation/7.5-floating-point-arithmetics.html">
+                <p class="mb-2">65 - floating-point arithmetics</p>
+            </a>
+              
+            <a href="/documentation/7.6-formatting-numbers.html">
+                <p class="mb-2">66 - formatting numbers</p>
+            </a>
+              
+            <a href="/documentation/7.7-Converting-binary-octal-decimal-hexadecimal.html">
+                <p class="mb-2">67 - Converting between binary, octal, decimal, and hexadecimal</p>
+            </a>
+              
+            <a href="/documentation/7.8-formatting-with-the-correct-plurals.html">
+                <p class="mb-2">68 - formatting with the correct plurals</p>
+            </a>
+              
+            <a href="/documentation/7.9-generating-random-numbers.html">
+                <p class="mb-2">69 - generating random numbers</p>
+            </a>
+              
+            <a href="/documentation/8.0-operating-complex-numbers.html">
+                <p class="mb-2">70 - operating complex numbers</p>
+            </a>
+              
+            <a href="/documentation/8.1-converting-between-degrees-radians.html">
+                <p class="mb-2">71 - converting between degrees and radians</p>
+            </a>
+              
+            <a href="/documentation/8.2-taking-logarithms.html">
+                <p class="mb-2">72 - taking logarithms</p>
+            </a>
+              
+            <a href="/documentation/8.3-generating-checksums.html">
+                <p class="mb-2">73 - generating checksums</p>
+            </a>
+              
+            <a href="/documentation/8.4-reading-standard-input.html">
+                <p class="mb-2">74 - reading standard input</p>
+            </a>
+              
+            <a href="/documentation/8.5-writing-standard-output-error.html">
+                <p class="mb-2">75 - Writing standard output and error</p>
+            </a>
+              
+            <a href="/documentation/8.6-opening-a-file-by-name.html">
+                <p class="mb-2">76 - opening a file by name</p>
+            </a>
+              
+            <a href="/documentation/8.7-reading-the-file-into-string.html">
+                <p class="mb-2">77 - reading the file into a string</p>
+            </a>
+              
+            <a href="/documentation/8.8-reading-writing-different-charset.html">
+                <p class="mb-2">78 - Reading writing a different charset</p>
+            </a>
+              
+            <a href="/documentation/8.9-seeking-position-within-file.html">
+                <p class="mb-2">79 - Seeking a position within a file</p>
+            </a>
+              
+            <a href="/documentation/9.0-reading-writing-binary-data.html">
+                <p class="mb-2">80 - reading and writing binary data</p>
+            </a>
+              
+            <a href="/documentation/9.1-writing-multiple-writers-at-once.html">
+                <p class="mb-2">81 - writing to multiple writers at once</p>
+            </a>
+              
+            <a href="/documentation/9.2-piping-between-writer-reader.html">
+                <p class="mb-2">82 - piping between writer and reader</p>
+            </a>
+              
+            <a href="/documentation/9.3-serializing-objects-binary-format.html">
+                <p class="mb-2">83 - serializing objects to binary format</p>
+            </a>
+              
+            <a href="/documentation/9.4-reading-writing-zip-files.html">
+                <p class="mb-2">84 - reading and writing ZIP files</p>
+            </a>
+              
+            <a href="/documentation/9.5-parsing-large-xml-file-effectively.html">
+                <p class="mb-2">85 - Parsing a large XML file effectively</p>
+            </a>
+              
+            <a href="/documentation/9.6-extracting-data-JSON-array.html">
+                <p class="mb-2">86 - extracting data from an incomplete JSON array</p>
+            </a>
+              
+            <a href="/documentation/9.7-getting-file-information.html">
+                <p class="mb-2">87 - getting file information</p>
+            </a>
+              
+            <a href="/documentation/9.8-creating-temporary-files.html">
+                <p class="mb-2">88 - creating temporary files</p>
+            </a>
+              
+            <a href="/documentation/9.9-writing-the-file.html">
+                <p class="mb-2">89 - writing the file</p>
+            </a>
+              
+            <a href="/documentation/10.0-writing-the-file-from-multiple-goroutines.html">
+                <p class="mb-2">90 - writing the file from multiple goroutines</p>
+            </a>
+              
+            <a href="/documentation/10.1-listing-directory.html">
+                <p class="mb-2">91 - listing a directory</p>
+            </a>
+              
+            <a href="/documentation/10.2-Changing-file-permissions.html">
+                <p class="mb-2">92 - Changing file permissions</p>
+            </a>
+              
+            <a href="/documentation/10.3-Creating-files-and-dir.html">
+                <p class="mb-2">93 - Creating files and directories</p>
+            </a>
+              
+            <a href="/documentation/10.4-filtering-file-listings.html">
+                <p class="mb-2">94 - Filtering file listings</p>
+            </a>
+              
+            <a href="/documentation/10.5-comparing-two-files.html">
+                <p class="mb-2">95 - comparing two files</p>
+            </a>
+              
+            <a href="/documentation/10.6-resolve-the-user-home-directory.html">
+                <p class="mb-2">96 - Resolving the user home directory</p>
+            </a>
+             
+        </div>
+<!-- 
+        <div class="sidebar mb-2 mt-4">
+            <h6 class="mb-3">Golang 102</h6>
+                                                                                                                                                                                                              
+        </div>
+-->
+<!-- 
+        <div class="sidebar mb-2 mt-4">
+            <h6 class="mb-3">Azure</h6>
+                                                                                                                                                                                                              
+        </div>
+-->
+<!-- 
+        <div class="sidebar mb-2 mt-4">
+                <h6 class="mb-3">Digital Ocean</h6>
+                                                                                                                                                                                                                  
+            </div>
+-->
+<!--
+        <div class="sidebar mb-2 mt-4">
+                <h6 class="mb-3">Google</h6>
+                                                                                                                                                                                                                  
+            </div>
+-->
+<!--
+        <div class="sidebar mb-2 mt-4">
+            <h6 class="mb-3">OVH</h6>
+                                                                                                                                                                                                              
+        </div>
+-->
+<!--
+        <div class="sidebar mb-2 mt-4">
+                <h6 class="mb-3">Packet</h6>
+                                                                                                                                                                                                                  
+            </div>
+            -->
+    </div>
+    <!--
+                               888
+                               888
+                               888
+    88888b.   .d88b.  .d8888b  888888
+    888 "88b d88""88b 88K      888
+    888  888 888  888 "Y8888b. 888
+    888 d88P Y88..88P      X88 Y88b.
+    88888P"   "Y88P"   88888P'  "Y888
+    888
+    888
+    888
+     -->
+    <div class="col-sm-8">
+        <!-- <figure class="figure">
+                <img src="https://placebear.com/g/1200/720" class="img-fluid" alt="Responsive image">
+
+                <figcaption class="figure-caption text-left"><small><i>Image copyright 2007 ® Fancy Photographer</i></small></figcaption>
+            </figure> -->
+        <h1>Bool Type</h1>
+
+        <p class="figure-caption text-left"><i>
+           </i></p>
+        <h1 id="bool-type">Bool Type</h1>
+
+<p>It’s always good to take a look at the language specification and to become familiar and acquainted with the terminology used to talk about a programming language. That way we can be accurate and precise in understanding the language and in representing it and communicating it to others, so it’s very important to understand what the people who designed the language were intending. We will have a closer look at the <a href="https://golang.org/ref/spec">Go Programming Language Specification</a> later on.</p>
+
+<p>In this section, we’re going to take a look at different types in Go. Let’s start<a href="https://golang.org/ref/spec#Boolean_types">Boolean Types</a></p>
+
+<p>A <em>boolean type</em> represents the set of Boolean truth values denoted by the predeclared constants <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code>. The predeclared boolean type is <code class="highlighter-rouge">bool</code>.</p>
+
+<p>A Boolean is a type that can be either <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. If we <a href="https://www.google.ca/search?q=define%3A+boolean&amp;rlz=1C5CHFA_enCA702CA702&amp;oq=define%3A+boolean&amp;aqs=chrome..69i57j69i58.3231j0j7&amp;sourceid=chrome&amp;ie=UTF-8">look up Boolean</a>, it is defined as “denoting a system of algebraic notation used to represent logical propositions, especially in computing and electronics,” or “a binary variable, having two possible values called “true” and “false.”</p>
+
+<p>So a Boolean is just that; <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. It plays an important role in programming. Booleans allow us to have an expression evaluate down to a Boolean condition (<code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>). And then make a decision based on that condition. So, if something is <code class="highlighter-rouge">true</code> we can do one thing, and if it’s false, we can do something else.</p>
+
+<p>Later in this course, we will learn about conditional logic, switch statements, if statements, control flow, and how there is sequential control flow, and iterative control flow where you loop over something.</p>
+
+<p>For now though, let’s see this <code class="highlighter-rouge">Boolean</code> value in action.</p>
+
+<p>In Go, <code class="highlighter-rouge">bool</code> is a type, so let’s declare a variable <code class="highlighter-rouge">x</code> of type <code class="highlighter-rouge">bool</code></p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span><span class="x"> </span><span class="n">x</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+</span></code></pre></div></div>
+<p><code class="highlighter-rouge">var</code> <code class="highlighter-rouge">x</code> is of <em>type</em> <code class="highlighter-rouge">bool</code>. <code class="highlighter-rouge">x</code> <em>holds values</em> of <em>type</em> <code class="highlighter-rouge">bool</code>. We have declared the variable <code class="highlighter-rouge">x</code>, but have not assigned a value. That means if we print <code class="highlighter-rouge">x</code>, it will return its <em>Zero Value</em>. The Zero Value of a variable that is of type <code class="highlighter-rouge">bool</code> is <code class="highlighter-rouge">false</code></p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+	</span><span class="s">"fmt"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">var</span><span class="x"> </span><span class="n">x</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+
+</span></code></pre></div></div>
+<p><a href="https://play.golang.org/p/QuKLHA2JYG">playground</a></p>
+
+<p>Some people find it strange that we don’t add a semicolon to the end of lines in Go. The semicolons are added in behind the scenes by the compiler. So, rather than <code class="highlighter-rouge">x = true;</code>, you just do <code class="highlighter-rouge">x = true</code>. Go is all about <em>ease of programming</em>. Remember, efficient complilation, ease of programming and efficient execution.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+	</span><span class="s">"fmt"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">var</span><span class="x"> </span><span class="n">x</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="x">
+	</span><span class="n">x</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="no">true</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre></div></div>
+
+<p>We can also do evaluations, or compare things, and get a <code class="highlighter-rouge">bool</code> in return. If we look at the <a href="https://golang.org/ref/spec#Operators_and_Delimiters">operators and delimiters</a>, we have some operators which allow us to do comparisons such as double equality <code class="highlighter-rouge">==</code>, less than or equal to<code class="highlighter-rouge">&lt;=</code>, greater than or equal to <code class="highlighter-rouge">&gt;=</code>, or greater than <code class="highlighter-rouge">&gt;</code> and less than <code class="highlighter-rouge">&lt;</code>, not equal <code class="highlighter-rouge">!=</code>, etc.</p>
+
+<p>Let’s try some out. Using the short declaration operator, let’s assign values to a couple of variables <code class="highlighter-rouge">a := 7</code>, and <code class="highlighter-rouge">b := 42</code>, then see if they are equal to each other <code class="highlighter-rouge">a == b</code>.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+	</span><span class="s">"fmt"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">var</span><span class="x"> </span><span class="n">x</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">a</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="m">7</span><span class="x"> </span><span class="c">// if we change this to 42, a == b will evaluate to true</span><span class="x">
+	</span><span class="n">b</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="m">42</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">a</span><span class="x"> </span><span class="o">==</span><span class="x"> </span><span class="n">b</span><span class="p">)</span><span class="x"> </span><span class="c">// experiment with different operators: &lt;=, &gt;=, !=, &gt;, &lt;</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre></div></div>
+<p><a href="https://play.golang.org/p/XUZP_Hwm_x">playground</a></p>
+
+<p>In Go a double equals operator <code class="highlighter-rouge">==</code> is for equality comparison, and a single equals operator <code class="highlighter-rouge">=</code> is for assignment.</p>
+
+<p>The language specification for <a href="https://golang.org/ref/spec#Boolean_types">Boolean Types</a> states</p>
+
+<p><em>boolean type represents the set of Boolean truth values denoted by the predeclared constants true and false. The predeclared boolean type is bool.</em></p>
+
+
+
+        <div class="social-media mt-4 mb-5">
+            <h6 class="text-center">Share it:</h6>
+            <p class="text-center" style="font-size: 2rem;">
+                <a href="https://twitter.com/intent/tweet?text=Bool Type&url=http://localhost:4000/documentation/3.4-bool-type.html&via=kubedaily&related=kubedaily" rel="nofollow" target="_blank" title="Share on Twitter"><i aria-hidden="true" class="fa fa-twitter-square"></i></a>
+                <a href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/documentation/3.4-bool-type.html" rel="nofollow" target="_blank" title="Share on Facebook"><i aria-hidden="true" class="fa fa-facebook-square"></i></a>
+                <a href="https://plus.google.com/share?url=http://localhost:4000/documentation/3.4-bool-type.html" rel="nofollow" target="_blank" title="Share on Google+"><i aria-hidden="true" class="fa fa-google-plus-square"></i></a>
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/documentation/3.4-bool-type.html&title=Bool Type" rel="nofollow" target="_blank" title="Share on LinkedIn"><i aria-hidden="true" class="fa fa-linkedin-square"></i></a>
+                <a href="http://www.reddit.com/submit?url=http://localhost:4000/documentation/3.4-bool-type.html&title=Bool Type" rel="nofollow" target="_blank" title="Share on Reddit"><i aria-hidden="true" class="fa fa-reddit-square"></i></a>
+            </p>
+        </div>
+
+        <!-- <div class="row author-section mb-5">
+            <div class="col-4 col-lg-2">
+                <img src="https://placebear.com/g/200/200" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col align-self-center">
+                <a href="">
+                    <h6>Author J. Writer</h6>
+                </a>
+                <p><small>Dr. Writer is the bearer of many writings about bears, beers, and the second ammendment. As of late he's also been writing about kittins, the jerk.</small></p>
+
+            </div>
+        </div> -->
+
+    </div>
+</div>
+
+<!-- jeklly post weight sort -->
+
+
+
+      </div>
+    </main>
+
+    <!-- 
+ .d888                  888                    
+d88P"                   888                    
+888                     888                    
+888888 .d88b.   .d88b.  888888 .d88b.  888d888 
+888   d88""88b d88""88b 888   d8P  Y8b 888P"   
+888   888  888 888  888 888   88888888 888     
+888   Y88..88P Y88..88P Y88b. Y8b.     888     
+888    "Y88P"   "Y88P"   "Y888 "Y8888  888     
+-->
+<div class="row light-bg py-3 px-3 mb-0 social-media-footer">
+  <div class="col-md-4 text-center d-flex align-items-start justify-content-center">
+    <div>
+      <h3 class="mb-3 mt-3">Community</h3>
+      <p><a href="">Code of Conduct</a></p>
+      <p><a href="">Contributing Guidelines</a></p>
+      <p><a href="">Authors</a></p>
+    </div>
+  </div>
+  <div class="col-md-4 text-center d-flex align-items-start justify-content-center">
+    <div>
+      <h3 class="mb-3 mt-3">Join us!</h3>
+      <a class=" px-1" href="https://twitter.com/kubedaily"><i aria-hidden="true" class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+      <a class=" px-1" href="https://github.com/sangam14/gopherlabs/"><i aria-hidden="true" class="fa fa-github"></i></a>&nbsp;&nbsp;
+      <br>
+      <button onclick="location.href='https://discord.gg/S3GtFvT'" type="button">
+        Join Our Community on Discord</button>
+
+
+      <!-- <a class=" px-1" href=""><i aria-hidden="true" class="fa fa-stack-overflow"></i></a>&nbsp;&nbsp;
+      <a class=" px-1" href=""><i aria-hidden="true" class="fa fa-envelope"></i></a>&nbsp;&nbsp;   -->
+    </div>
+  </div>
+  <div class="col-md-4 text-center d-flex align-items-start justify-content-center">
+    <div>
+      <h3 class="mb-3 mt-3"><code>kubedaily</code></h3>
+      <p class="small">© 2020 Kubedaily Community</p>
+    </div>
+  </div>
+</div>
+
+  <!-- 
+                          d8b          888             
+                          Y8P          888             
+                                       888             
+.d8888b   .d8888b 888d888 888 88888b.  888888 .d8888b  
+88K      d88P"    888P"   888 888 "88b 888    88K      
+"Y8888b. 888      888     888 888  888 888    "Y8888b. 
+     X88 Y88b.    888     888 888 d88P Y88b.       X88 
+ 88888P'  "Y8888P 888     888 88888P"   "Y888  88888P' 
+                              888                      
+                              888                      
+                              888                      
+-->
+</div>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+  crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+  crossorigin="anonymous"></script>
+  <script>
+      $('.nav-item').click(function(){
+        $('.navbar-collapse').collapse('hide');
+      });
+    </script>
+
+
+  </body>
+
+</html>
